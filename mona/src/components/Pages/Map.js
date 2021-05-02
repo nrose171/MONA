@@ -12,7 +12,7 @@ var center = [-34.43537, 150.45502];
 function Map() {
   return (
       <div>
-            <h1>Map</h1>
+            <h1 style={{marginTop: '10vh'}}>Map</h1>
             <MapContainer center={[-34.43537, 150.45502]} zoom={10} scrollWheelZoom={true}>
 
               <ImageOverlay

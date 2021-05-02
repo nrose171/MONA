@@ -7,12 +7,6 @@ function Nav() {
     
     return (
         <nav>
-            <Button component={ Link } to="/" variant="contained" color="primary">
-                Home
-            </Button>
-            <Button component={ Link } to="/components/Pages/Map" variant="contained" color="primary">
-                Map
-            </Button>
         </nav>
     );
 }

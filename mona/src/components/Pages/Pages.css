@@ -3,8 +3,8 @@ nav {
     justify-content: space-around;
     align-items: center;
     min-height: 10vh;
-    background: rgb(29, 172, 219);
-    color: white;
+/*     background: rgb(29, 172, 219);
+    color: white; */
   }
 
 .nav-links{

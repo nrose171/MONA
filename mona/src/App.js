@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Nav from "./components/Pages/Nav";
+import Explore from "./components/Pages/Explore";
 import Home from "./components/Pages/Home";
 import Map from "./components/Pages/Map";
 import { Link } from 'react-router-dom';
@@ -7,7 +7,7 @@ import {BrowserRouter as Router, Switch, Route, BrowserRouter} from 'react-route
 import { AppBar, Tabs, Tab, Grid, Typography, Box, makeStyles } from "@material-ui/core";
 
 function App() {
-  const routes = ["/", "/components/Pages/Map"];
+  const routes = ["/", "/components/Pages/Explore", "/components/Pages/Map"];
   const classes = useStyles();
   const [value, setValue] = useState("/");
 
@@ -50,11 +50,17 @@ function App() {
                         component={Link}
                         to={routes[0]}
                       />
-                      <Tab 
-                        label={<span className={ value === "/components/Pages/Map" ? classes.activeTab : classes.customStyleOnTab}>Map</span>}
+                      <Tab
+                        label={<span className={ value === "/components/Pages/Explore" ? classes.activeTab : classes.customStyleOnTab}>Explore</span>}
                         value={routes[1]} 
                         component={Link}
                         to={routes[1]}
+                      />
+                      <Tab 
+                        label={<span className={ value === "/components/Pages/Map" ? classes.activeTab : classes.customStyleOnTab}>Map</span>}
+                        value={routes[2]} 
+                        component={Link}
+                        to={routes[2]}
                       />
                       </Tabs>
                     </Box>
@@ -68,6 +74,7 @@ function App() {
 
       <Switch>
         <Route path="/" exact component={Home} />
+        <Route path="/components/Pages/Explore" component={Explore} />
         <Route path="/components/Pages/Map" component={Map} />
       </Switch>
     </BrowserRouter>

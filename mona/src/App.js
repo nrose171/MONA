@@ -7,7 +7,7 @@ import {BrowserRouter as Router, Switch, Route, BrowserRouter} from 'react-route
 import { AppBar, Tabs, Tab, Grid, Typography, Box, makeStyles } from "@material-ui/core";
 
 function App() {
-  const routes = ["/", "/Pages/Explore", "/Pages/Map"];
+  const routes = ["/", "/Explore", "/Map"];
   const classes = useStyles();
   const [value, setValue] = useState("/");
 
@@ -51,13 +51,13 @@ function App() {
                         to={routes[0]}
                       />
                       <Tab
-                        label={<span className={ value === "/Pages/Explore" ? classes.activeTab : classes.customStyleOnTab}>Explore</span>}
+                        label={<span className={ value === "/Explore" ? classes.activeTab : classes.customStyleOnTab}>Explore</span>}
                         value={routes[1]}
                         component={Link}
                         to={routes[1]}
                       />
                       <Tab
-                        label={<span className={ value === "/Pages/Map" ? classes.activeTab : classes.customStyleOnTab}>Map</span>}
+                        label={<span className={ value === "/Map" ? classes.activeTab : classes.customStyleOnTab}>Map</span>}
                         value={routes[2]}
                         component={Link}
                         to={routes[2]}
@@ -74,8 +74,8 @@ function App() {
 
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/Pages/Explore" component={Explore} />
-        <Route path="/Pages/Map" component={Map} />
+        <Route path="/Explore" component={Explore} />
+        <Route path="/Map" component={Map} />
       </Switch>
     </BrowserRouter>
     </div>

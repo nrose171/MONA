@@ -2,6 +2,9 @@
   width: 100vw;
   height: 30vw;
 }
+html{
+  scroll-behavior: smooth
+}
 
 .museum-page{
   margin-left: 20px;

@@ -30,16 +30,41 @@ var center = [-34.43537, 150.45502];
 
 function Louvre() {
 
+  const scrollToTarget = (id) => {
+    const element = document.getElementById(id);
+    const offset = 80;
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = element.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition - offset;
+        
+    window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+    });   
+  }
+
+  const handleButton1 = () => {
+    scrollToTarget("here");
+  }
+
   return (
     <div className = {"museum-page"}>
       <div>
             <br/>
             <h1>lOUVRE MUSEUM</h1>
+            <Button
+                onClick={handleButton1}
+                variant={"contained"}
+                color="primary">
+                Browse Featured Artwork
+            </Button>
             <div
               style = {{
                 display: "flex", justifyContent: "center", alignItems: "center"
               }}
             >
+              
               <Box
                 border={2}
                 style = {{
@@ -73,7 +98,7 @@ function Louvre() {
         <center>
           <h1 style={{marginTop: '0vh'}}>Featured Artwork</h1>
         </center>
-        <Grid container spacing={0} direction="column">
+        <Grid container spacing={0} direction="column" id="here">
 
             <ArtworkCardList></ArtworkCardList>
 

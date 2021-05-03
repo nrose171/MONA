@@ -3,9 +3,11 @@ import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import { MapContainer, TileLayer, ImageOverlay, Marker, Popup } from 'react-leaflet';
-import { Button, Box } from '@material-ui/core'
-import { borders } from '@material-ui/system';
+import { MapContainer, TileLayer, ImageOverlay, Marker, Popup, Icon } from "react-leaflet";
+import { Button, Box } from "@material-ui/core";
+import { borders } from "@material-ui/system";
+
+import { GreenIcon } from "../components/GreenIcon.js"
 
 import './Pages.css';
 
@@ -41,7 +43,7 @@ function Map() {
                         console.log('marker clicked')
                       },
                     }}
-                    //icon={'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png'}
+                    icon={GreenIcon}
                   >
                     <Popup position={center}>
                       <center>Mona Lisa</center>

@@ -1,19 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import { MapContainer, TileLayer, ImageOverlay, Marker, Popup, Icon } from "react-leaflet";
+import { MapContainer, TileLayer, ImageOverlay, Marker, Popup } from "react-leaflet";
 import { Button, Box } from "@material-ui/core";
 import { borders } from "@material-ui/system";
-
-import { GreenIcon, BlueIcon } from "../components/MarkerIcons.js"
+import ArtworkMarker from "../components/Markers.js";
 
 import './Pages.css';
 
 var center = [-34.43537, 150.45502];
 
+function onChange(newName) {   this.setState({ parentName: newName });}
+
 function Map() {
+
   return (
       <div>
             <h1>Map</h1>
@@ -33,23 +35,20 @@ function Map() {
 
                   <ImageOverlay
                     url="https://i.imgur.com/Lha3Pz4.png"
-                    bounds={[center, [-34.67063, 150.21057]]}
+                    bounds={[center, [center[0]-0.3, center[1]-0.3]]}
                   />
 
-                  <Marker
-                    position={center}
-                    eventHandlers={{
-                      click: () => {
-                        this.icon = {}
-                      },
-                    }}
-                    icon={GreenIcon}
-                  >
-                    <Popup position={center}>
-                      <center>Mona Lisa</center>
-                      <img src="https://i.imgur.com/lmJy0b5.jpg" height="100px" width="100px"/>
-                    </Popup>
-                  </Marker>
+                  <ArtworkMarker
+                    location={center}
+                    name={"Mona Lisa"}
+                    imageSrc={"https://i.imgur.com/lmJy0b5.jpg"}
+                    />
+
+                  <ArtworkMarker
+                   location={[center[0]-0.3, center[1]-0.3]}
+                   name={"Another Artwork"}
+                   imageSrc={"https://i.imgur.com/lmJy0b5.jpg"}
+                   />
 
                 </MapContainer>
               </Box>

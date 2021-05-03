@@ -111,7 +111,7 @@ function Smithsonian() {
                           [classes.expandOpen]: expanded1,
                         })}
                         onClick={handleExpandClick1}
-                        aria-expanded1={expanded1}
+                        aria-expanded={expanded1}
                         aria-label="show more"
                       >
                         <ExpandMoreIcon />
@@ -156,7 +156,7 @@ function Smithsonian() {
                           [classes.expandOpen]: expanded2,
                         })}
                         onClick={handleExpandClick2}
-                        aria-expanded2={expanded2}
+                        aria-expanded={expanded2}
                         aria-label="show more"
                       >
                         <ExpandMoreIcon />
@@ -201,7 +201,7 @@ function Smithsonian() {
                           [classes.expandOpen]: expanded3,
                         })}
                         onClick={handleExpandClick3}
-                        aria-expanded3={expanded3}
+                        aria-expanded={expanded3}
                         aria-label="show more"
                       >
                         <ExpandMoreIcon />
@@ -246,7 +246,7 @@ function Smithsonian() {
                             [classes.expandOpen]: expanded4,
                           })}
                           onClick={handleExpandClick4}
-                          aria-expanded4={expanded4}
+                          aria-expanded={expanded4}
                           aria-label="show more"
                         >
                           <ExpandMoreIcon />
@@ -292,7 +292,7 @@ function Smithsonian() {
                           [classes.expandOpen]: expanded4,
                         })}
                         onClick={handleExpandClick5}
-                        aria-expanded5={expanded5}
+                        aria-expanded={expanded5}
                         aria-label="show more"
                       >
                         <ExpandMoreIcon />
@@ -337,7 +337,7 @@ function Smithsonian() {
                           [classes.expandOpen]: expanded6,
                         })}
                         onClick={handleExpandClick6}
-                        aria-expanded6={expanded6}
+                        aria-expanded={expanded6}
                         aria-label="show more"
                       >
                         <ExpandMoreIcon />
@@ -382,7 +382,7 @@ function Smithsonian() {
                           [classes.expandOpen]: expanded7,
                         })}
                         onClick={handleExpandClick7}
-                        aria-expanded7={expanded7}
+                        aria-expanded={expanded7}
                         aria-label="show more"
                       >
                         <ExpandMoreIcon />
@@ -428,7 +428,7 @@ function Smithsonian() {
                           [classes.expandOpen]: expanded8,
                         })}
                         onClick={handleExpandClick8}
-                        aria-expanded8={expanded8}
+                        aria-expanded={expanded8}
                         aria-label="show more"
                       >
                         <ExpandMoreIcon />
@@ -473,7 +473,7 @@ function Smithsonian() {
                           [classes.expandOpen]: expanded9,
                         })}
                         onClick={handleExpandClick9}
-                        aria-expanded9={expanded9}
+                        aria-expanded={expanded9}
                         aria-label="show more"
                       >
                         <ExpandMoreIcon />

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import {BrowserRouter as Router, Switch, Route, BrowserRouter} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Louvre from "./Museums/Louvre";
 import Smithsonian from "./Museums/Smithsonian";
 import { makeStyles, FormControl, InputLabel, Select, MenuItem, Box } from "@material-ui/core";

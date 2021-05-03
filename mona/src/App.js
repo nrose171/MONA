@@ -1,26 +1,26 @@
 import React, { useState } from "react";
-import Explore from "./components/Pages/Explore";
-import Home from "./components/Pages/Home";
-import Map from "./components/Pages/Map";
+import Explore from "./Pages/Explore";
+import Home from "./Pages/Home";
+import Map from "./Pages/Map";
 import { Link } from 'react-router-dom';
 import {BrowserRouter as Router, Switch, Route, BrowserRouter} from 'react-router-dom';
 import { AppBar, Tabs, Tab, Grid, Typography, Box, makeStyles } from "@material-ui/core";
 
 function App() {
-  const routes = ["/", "/components/Pages/Explore", "/components/Pages/Map"];
+  const routes = ["/", "/Pages/Explore", "/Pages/Map"];
   const classes = useStyles();
   const [value, setValue] = useState("/");
 
   const handleChange = (e, newVal)=>{
     setValue(newVal)
   }
-  
-  
+
+
   return (
     <div>
       <BrowserRouter>
-        <Route 
-          path="/" 
+        <Route
+          path="/"
           render={(history) => (
             <AppBar style={{ background: '#a3baff' }}>
               <Grid container spacing={1} direction="column">
@@ -38,7 +38,7 @@ function App() {
                   <Grid item xs={6} />
                   <Grid item xs={3}>
                     <Box pt={2}>
-                      <Tabs 
+                      <Tabs
                         value={value}
                         onChange={handleChange}
                         classes={{indicator: classes.customStyleOnActiveTab}}
@@ -46,19 +46,19 @@ function App() {
                       >
                       <Tab
                         label={<span className={ value === "/" ? classes.activeTab : classes.customStyleOnTab}>Home</span>}
-                        value={routes[0]} 
+                        value={routes[0]}
                         component={Link}
                         to={routes[0]}
                       />
                       <Tab
-                        label={<span className={ value === "/components/Pages/Explore" ? classes.activeTab : classes.customStyleOnTab}>Explore</span>}
-                        value={routes[1]} 
+                        label={<span className={ value === "/Pages/Explore" ? classes.activeTab : classes.customStyleOnTab}>Explore</span>}
+                        value={routes[1]}
                         component={Link}
                         to={routes[1]}
                       />
-                      <Tab 
-                        label={<span className={ value === "/components/Pages/Map" ? classes.activeTab : classes.customStyleOnTab}>Map</span>}
-                        value={routes[2]} 
+                      <Tab
+                        label={<span className={ value === "/Pages/Map" ? classes.activeTab : classes.customStyleOnTab}>Map</span>}
+                        value={routes[2]}
                         component={Link}
                         to={routes[2]}
                       />
@@ -70,12 +70,12 @@ function App() {
             </AppBar>
          )}
         />
-        
+
 
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/components/Pages/Explore" component={Explore} />
-        <Route path="/components/Pages/Map" component={Map} />
+        <Route path="/Pages/Explore" component={Explore} />
+        <Route path="/Pages/Map" component={Map} />
       </Switch>
     </BrowserRouter>
     </div>

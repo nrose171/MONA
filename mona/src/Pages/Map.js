@@ -6,7 +6,9 @@ import Typography from "@material-ui/core/Typography";
 import { MapContainer, TileLayer, ImageOverlay, Marker, Popup } from "react-leaflet";
 import { Button, Box } from "@material-ui/core";
 import { borders } from "@material-ui/system";
-import ArtworkMarker from "../components/Markers.js";
+
+import ArtworkMarkerList from "../components/ArtworkMarkerList.js"
+import RoomLabelList from "../components/RoomLabelList.js"
 
 import './Pages.css';
 
@@ -31,42 +33,23 @@ function Map() {
                   display: "flex", justifyContent: "center", alignItems: "center", width: "70vw"
                 }}
               >
-                <MapContainer center={center} zoom={10} scrollWheelZoom={true}>
+                <MapContainer
+                  center={center}
+                  zoom={10}
+                  scrollWheelZoom={true}
+                  zoomDelta={0.8}
+                  maxZoom={12}
+                  minZoom={9}
+                >
 
                   <ImageOverlay
                     url="https://i.imgur.com/i7A6p9R.jpg"
                     bounds={[center, [center[0]-0.3, center[1]-0.3]]}
                   />
 
-                  <ArtworkMarker
-                    location={[center[0]-0.02, center[1]-0.06]}
-                    name={"Mona Lisa"}
-                    imageSrc={"https://i.imgur.com/lmJy0b5.jpg"}
-                  />
+                  <ArtworkMarkerList center={center}></ArtworkMarkerList>
 
-                  <ArtworkMarker
-                    location={[center[0]-0.28, center[1]-0.28]}
-                    name={"The Raft of Medusa"}
-                    imageSrc={"https://imgur.com/whuhdZM.jpg"}
-                  />
-
-                  <ArtworkMarker
-                    location={[center[0]-0.02, center[1]-0.27]}
-                    name={"Liberty Leading \nthe People"}
-                    imageSrc={"https://imgur.com/FyNiO3m.jpg"}
-                  />
-
-                  <ArtworkMarker
-                    location={[center[0]-0.16, center[1]-0.02]}
-                    name={"Venus de Milo"}
-                    imageSrc={"https://imgur.com/yL3L1LG.jpg"}
-                  />
-
-                  <ArtworkMarker
-                    location={[center[0]-0.28, center[1]-0.06]}
-                    name={"Winged Victory of Samothrace"}
-                    imageSrc={"https://imgur.com/FIONP1i.jpg"}
-                  />
+                  <RoomLabelList center={center}></RoomLabelList>
 
                 </MapContainer>
               </Box>

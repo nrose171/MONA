@@ -2,8 +2,6 @@ import React, {useState, useRef, useEffect} from "react";
 import { MapContainer, TileLayer, ImageOverlay, Marker, Popup } from "react-leaflet";
 import { GreenIcon, BlueIcon } from "./MarkerIcons.js";
 
-import L from 'leaflet';
-
 function changeColor(IconType, setIcon) {
   setIcon(IconType);
 }

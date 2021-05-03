@@ -1,5 +1,5 @@
 import React from "react";
-import { Circle, CircleMarker, Marker } from "react-leaflet";
+import { CircleMarker, Marker, Popup } from "react-leaflet";
 import L from 'leaflet';
 
 import './components.css';
@@ -24,7 +24,10 @@ const RoomLabel = props => {
           fillColor={"White"}
           fillOpacity={1.0}
         >
-          //<Marker position={props.location} icon={text} interactive={false} />
+          <Popup>
+            <center>{props.popup}</center>
+          </Popup>
+          <Marker position={props.location} icon={text} interactive={false} />
         </CircleMarker>
     );
 }

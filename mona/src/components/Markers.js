@@ -1,29 +1,53 @@
-import React, {useState} from "react";
+import React, {useState, useRef, useEffect} from "react";
 import { MapContainer, TileLayer, ImageOverlay, Marker, Popup } from "react-leaflet";
-import { GreenIcon, BlueIcon } from "../components/MarkerIcons.js";
+import { GreenIcon, BlueIcon } from "./MarkerIcons.js";
+
+function changeColor(IconType, setIcon) {
+  setIcon(IconType);
+}
 
 export default function ArtworkMarker(props) {
 
-    //Declare Hooks
     const [Icon, setIcon] = useState(GreenIcon);
 
+    //Declare Hooks
+    const markRef = useRef(null);
+
+    const handleClick = e => {
+      changeColor(GreenIcon, setIcon);
+    };
+
+    React.useEffect( () => {
+      // add when mounted
+      document.addEventListener("mousedown", handleClick);
+      // return function to be called when unmounted
+      return () => {
+        document.removeEventListener("mousedown", handleClick);
+      };
+    }, []);
+
     return(
-      <Marker
-        position={props.location}
-        eventHandlers={{
-          click: () => {
-            if(Icon == GreenIcon)
-              setIcon(BlueIcon);
-            else
-              setIcon(GreenIcon);
-          },
-        }}
-        icon={Icon}
-      >
-        <Popup position={props.location}>
-          <center>{props.name}</center>
-          <img src={props.imageSrc} height="100px" width="100px"/>
-        </Popup>
-      </Marker>
+        <Marker
+          position={props.location}
+          icon={Icon}
+          eventHandlers={{
+            click: () => {
+              if(Icon == GreenIcon)
+                changeColor(BlueIcon, setIcon);
+              else
+                changeColor(GreenIcon, setIcon);
+            },
+          }}
+        >
+          <Popup
+            position={props.location}
+          >
+            <center>{props.name}</center>
+            <img
+                src={props.imageSrc}
+                height="100px"
+                width="100px"/>
+          </Popup>
+        </Marker>
     );
 }

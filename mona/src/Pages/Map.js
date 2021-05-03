@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -12,9 +12,9 @@ import './Pages.css';
 
 var center = [-34.43537, 150.45502];
 
-function onChange(newName) {   this.setState({ parentName: newName });}
-
 function Map() {
+
+  //Defining Hooks
 
   return (
       <div>
@@ -42,13 +42,13 @@ function Map() {
                     location={center}
                     name={"Mona Lisa"}
                     imageSrc={"https://i.imgur.com/lmJy0b5.jpg"}
-                    />
+                  />
 
                   <ArtworkMarker
-                   location={[center[0]-0.3, center[1]-0.3]}
-                   name={"Another Artwork"}
-                   imageSrc={"https://i.imgur.com/lmJy0b5.jpg"}
-                   />
+                    location={[center[0]-0.3, center[1]-0.3]}
+                    name={"Another Artwork"}
+                    imageSrc={"https://i.imgur.com/lmJy0b5.jpg"}
+                  />
 
                 </MapContainer>
               </Box>

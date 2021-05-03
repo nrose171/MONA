@@ -17,7 +17,7 @@ function App() {
 
 
   return (
-    <div>
+    <div style={{backgroundColor: '#e6ebff'}}>
       <BrowserRouter>
         <Route
           path="/"

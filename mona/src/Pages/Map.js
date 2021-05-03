@@ -6,7 +6,9 @@ import Typography from "@material-ui/core/Typography";
 import { MapContainer, TileLayer, ImageOverlay, Marker, Popup } from "react-leaflet";
 import { Button, Box } from "@material-ui/core";
 import { borders } from "@material-ui/system";
-import ArtworkMarker from "../components/Markers.js";
+
+import ArtworkMarkerList from "../components/ArtworkMarkerList.js"
+import RoomLabelList from "../components/RoomLabelList.js"
 
 import './Pages.css';
 
@@ -31,24 +33,23 @@ function Map() {
                   display: "flex", justifyContent: "center", alignItems: "center", width: "70vw"
                 }}
               >
-                <MapContainer center={center} zoom={10} scrollWheelZoom={true}>
+                <MapContainer
+                  center={center}
+                  zoom={10}
+                  scrollWheelZoom={true}
+                  zoomDelta={0.8}
+                  maxZoom={12}
+                  minZoom={9}
+                >
 
                   <ImageOverlay
-                    url="https://i.imgur.com/Lha3Pz4.png"
+                    url="https://i.imgur.com/i7A6p9R.jpg"
                     bounds={[center, [center[0]-0.3, center[1]-0.3]]}
                   />
 
-                  <ArtworkMarker
-                    location={center}
-                    name={"Mona Lisa"}
-                    imageSrc={"https://i.imgur.com/lmJy0b5.jpg"}
-                  />
+                  <ArtworkMarkerList center={center}></ArtworkMarkerList>
 
-                  <ArtworkMarker
-                    location={[center[0]-0.3, center[1]-0.3]}
-                    name={"Another Artwork"}
-                    imageSrc={"https://i.imgur.com/lmJy0b5.jpg"}
-                  />
+                  <RoomLabelList center={center}></RoomLabelList>
 
                 </MapContainer>
               </Box>

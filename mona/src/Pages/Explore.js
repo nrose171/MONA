@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import {BrowserRouter as Router, Switch, Route, BrowserRouter} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Louvre from "./Museums/Louvre";
 import Smithsonian from "./Museums/Smithsonian";
 import { makeStyles, FormControl, InputLabel, Select, MenuItem, Box } from "@material-ui/core";
@@ -23,7 +23,7 @@ function Explore() {
 
   return (
       <div>
-        <h1 style={{marginTop: '10vh'}}> Explore</h1>
+        <h1 style={{marginTop: '10vh'}}></h1>
         <Router>
             <Box position={"absolute"} left={'40%'}>
               <FormControl className={classes.formControl}>
@@ -32,7 +32,7 @@ function Explore() {
                 value={value}
                 onChange={handleChange}
               >
-                <MenuItem 
+                <MenuItem
                   value={"/Explore/Louvre"}
                   component={Link}
                   to={"/Explore/Louvre"}

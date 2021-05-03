@@ -2,3 +2,6 @@
   width: 100vw;
   height: 30vw;
 }
+html{
+  scroll-behavior: smooth
+}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
+import './Pages.css';
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -41,31 +42,36 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3];
+const cards = [1, 2, 3,4,5,6,7];
 
 function Home() {
   const classes = useStyles();
-  const [button1, setButton1] = React.useState(true);
-  const [button2, setButton2] = React.useState(false);
 
   const handleButton1 = () => {
-    if(button1 === false) {
-      setButton1(!button1)
-      setButton2(!button2)
-    }
+    scrollToTarget("here");
   }
 
   const handleButton2 = () => {
-    if(button2 === false){
-      setButton1(!button1)
-      setButton2(!button2)
-    } 
+    scrollToTarget("cards");
   }
   
-
+  const scrollToTarget = (id) => {
+    const element = document.getElementById(id);
+    const offset = 100;
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = element.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition - offset;
+        
+    window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+    });   
+  }
+  
   return (
     <React.Fragment>
-      <main>
+      <div style={{backgroundColor: "#e6ebff"}}>
         {/* Hero unit */}
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
@@ -82,7 +88,7 @@ function Home() {
                 <Grid item>
                   <Button
                     onClick={handleButton1}
-                    variant={button1 ? "contained" : "outlined"}
+                    variant={"contained"}
                     color="primary">
                     Main call to action
                   </Button>
@@ -90,7 +96,7 @@ function Home() {
                 <Grid item>
                   <Button
                     onClick={handleButton2} 
-                    variant={!button2 ? "outlined" : "contained"} 
+                    variant={"contained"} 
                     color="primary">
                     Secondary action
                   </Button>
@@ -99,7 +105,29 @@ function Home() {
             </div>
           </Container>
         </div>
-        <Container className={classes.cardGrid} maxWidth="md">
+        <div id={"here"}>
+          <p>
+            Will Mateson<br />
+            Box 61<br />
+            Cleveland, Ohio<br />
+            Will Mateson<br />
+            Box 61<br />
+            Cleveland, Ohio<br />
+            Will Mateson<br />
+            Box 61<br />
+            Cleveland, Ohio<br />
+            Will Mateson<br />
+            Box 61<br />
+            Cleveland, Ohio<br />
+            Will Mateson<br />
+            Box 61<br />
+            Cleveland, Ohio<br />
+            Will Mateson<br />
+            Box 61<br />
+            Cleveland, Ohio<br />
+          </p>
+        </div>
+        <Container className={classes.cardGrid} maxWidth="md"  id={"cards"}>
           {/* End hero unit */}
           <Grid container spacing={4}>
             {cards.map((card) => (
@@ -131,7 +159,7 @@ function Home() {
             ))}
           </Grid>
         </Container>
-      </main>
+      </div>
     </React.Fragment>
   );
 }

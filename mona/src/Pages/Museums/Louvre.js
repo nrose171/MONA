@@ -16,10 +16,19 @@ const useStyles = makeStyles((theme) => ({
   },
   custom_text: {
     fontSize:'30px',
-    color:'Dark Grey'
+    color:'Black'
   },
   painting_name: {
     fontSize:'40px',
+    fontFamily: 'BlinkMacSystemFont',
+    fontStyle: 'normal',
+    fontDisplay: 'swap',
+  },
+  artist_name: {
+    fontSize:'40px',
+    fontFamily: '"Segoe UI"',
+    fontStyle: 'normal',
+    fontDisplay: 'swap',
   }
   
 }));
@@ -42,12 +51,12 @@ function Louvre() {
               </Grid>
               <Grid container item xs={12} justify="space-evenly" spacing={3}>
               <Grid item xs={5}>
-                  <Container maxWidth="sm" component="div" style={{ backgroundColor: '#cfe8fc', height: '30vh' }}>
+                  <Container maxWidth="sm" component="div" style={{ backgroundColor: '#c2d2ff', height: '30vh' }}>
                     <img src="https://i.imgur.com/lmJy0b5.jpg" height="660px" width="400px" justify="space-evenly" />
                   </Container>
               </Grid>
               <Grid item xs={5}>
-                  <Card maxWidth="sm" component="div" style={{ backgroundColor: '#cfe8fc', height: '50vh' }}>
+                  <Card maxWidth="sm" component="div" style={{ backgroundColor: '#c2d2ff', height: '50vh' }}>
                     <CardHeader avatar = {
                       <Avatar aria-label="Art" >
                         LD
@@ -58,10 +67,10 @@ function Louvre() {
                     />
                     <img src="https://i.imgur.com/lmJy0b5.jpg" height="90px" width="10px" align="center" />
                     <CardContent>
-                      <Typography variant="body2" color="dark grey" component="p" >
+                      <Typography className={classes.painting_name} variant="body2" color="dark grey" component="p" >
                         Artist: Leonardo Da Vinci
                       </Typography>
-                      <Typography variant="body1" color="dark grey" component="p">
+                      <Typography className={classes.artist_name} variant="body1" color="dark grey" component="p">
                         Year:   1506
                       </Typography>
                       
@@ -110,3 +119,127 @@ function FormRow() {
 
 
 export default Louvre;
+
+/*
+<Grid container 
+              direction="row"
+              justify="space-evenly"
+              alignItems="flex-start"
+              spacing={1}>
+              <Grid container item xs={12} justify="space-evenly" spacing={3}>
+              <Grid item xs={5}>
+                    // put here
+              </Grid>
+              <Grid item xs={5}>
+                  <Card maxWidth="sm" component="div" style={{ backgroundColor: '#c2d2ff', height: '50vh' }}>
+                    // put here
+                  </Card>
+              </Grid>
+              </Grid>
+            </Grid>
+            <h1>end</h1>
+
+
+
+<Card maxWidth="sm" component="div" style={{ backgroundColor: '#c2d2ff', height: '50vh' }}>
+                    <CardHeader avatar = {
+                      <Avatar aria-label="Art" >
+                        LD
+                      </Avatar>
+                    }
+                    title="Mona Lisa"
+                    subheader="Leonardo Da Vinci"
+                    />
+                    <img src="https://i.imgur.com/lmJy0b5.jpg" height="90px" width="10px" align="center" />
+                    <CardContent>
+                      <Typography className={classes.painting_name} variant="body2" color="dark grey" component="p" >
+                        Artist: Leonardo Da Vinci
+                      </Typography>
+                      <Typography className={classes.artist_name} variant="body1" color="dark grey" component="p">
+                        Year:   1506
+                      </Typography>
+                      
+                    </CardContent>  
+                    <Accordion>
+                      <AccordionSummary
+                        aria-controls="panel2a-content"
+                        id="panel2a-header"
+                      >
+                        <Typography className={classes.heading}>Accordion 2</Typography>
+                      </AccordionSummary>
+                      <AccordionDetails>
+                        <Typography>
+                          this is painting
+                        </Typography>
+                      </AccordionDetails>
+                    </Accordion>
+                  </Card>
+
+
+
+
+
+function Louvre() {
+  const classes = useStyles();
+  return (
+      <div>
+          <h1 style={{marginTop: '0vh'}}> Louvre Museum</h1>
+
+          <h1>start</h1>
+            <Grid container 
+              direction="row"
+              justify="space-evenly"
+              alignItems="flex-start"
+              spacing={1}>
+              <Grid container item xs={12} justify="space-evenly" spacing={3}>
+                  <Paper className={classes.paper}>item</Paper>
+              </Grid>
+              <Grid container item xs={12} justify="space-evenly" spacing={3}>
+              <Grid item xs={5}>
+                  <Container maxWidth="sm" component="div" style={{ backgroundColor: '#c2d2ff', height: '30vh' }}>
+                    <img src="https://i.imgur.com/lmJy0b5.jpg" height="660px" width="400px" justify="space-evenly" />
+                  </Container>
+              </Grid>
+              <Grid item xs={5}>
+                  <Card maxWidth="sm" component="div" style={{ backgroundColor: '#c2d2ff', height: '50vh' }}>
+                    <CardHeader avatar = {
+                      <Avatar aria-label="Art" >
+                        LD
+                      </Avatar>
+                    }
+                    title="Mona Lisa"
+                    subheader="Leonardo Da Vinci"
+                    />
+                    <img src="https://i.imgur.com/lmJy0b5.jpg" height="90px" width="10px" align="center" />
+                    <CardContent>
+                      <Typography className={classes.painting_name} variant="body2" color="dark grey" component="p" >
+                        Artist: Leonardo Da Vinci
+                      </Typography>
+                      <Typography className={classes.artist_name} variant="body1" color="dark grey" component="p">
+                        Year:   1506
+                      </Typography>
+                      
+                    </CardContent>  
+                    <Accordion>
+                      <AccordionSummary
+                        aria-controls="panel2a-content"
+                        id="panel2a-header"
+                      >
+                        <Typography className={classes.heading}>Accordion 2</Typography>
+                      </AccordionSummary>
+                      <AccordionDetails>
+                        <Typography>
+                          this is painting
+                        </Typography>
+                      </AccordionDetails>
+                    </Accordion>
+                  </Card>
+              </Grid>
+              </Grid>
+            </Grid>
+            <h1>end</h1>
+
+      </div>
+  );
+}
+    */

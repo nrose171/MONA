@@ -35,10 +35,15 @@ const useStyles = makeStyles((theme) => ({
 
 function RandomMuseum() {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded1, setExpanded1] = React.useState(false);
+  const [expanded2, setExpanded2] = React.useState(false);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
+  const handleExpandClick1 = () => {
+    setExpanded1(!expanded1);
+  };
+
+  const handleExpandClick2 = () => {
+    setExpanded2(!expanded2);
   };
 
   return (
@@ -70,16 +75,16 @@ function RandomMuseum() {
                   <CardActions disableSpacing>
                     <IconButton
                       className={clsx(classes.expand, {
-                        [classes.expandOpen]: expanded,
+                        [classes.expandOpen]: expanded1,
                       })}
-                      onClick={handleExpandClick}
-                      aria-expanded={expanded}
+                      onClick={handleExpandClick1}
+                      aria-expanded1={expanded1}
                       aria-label="show more"
                     >
                       <ExpandMoreIcon />
                     </IconButton>
                   </CardActions>
-                  <Collapse in={expanded} timeout="auto" unmountOnExit>
+                  <Collapse in={expanded1} timeout="auto" unmountOnExit>
                     <CardContent>
                       <Typography paragraph>Method:</Typography>
                       <Typography paragraph>
@@ -133,16 +138,16 @@ function RandomMuseum() {
                   <CardActions disableSpacing>
                     <IconButton
                       className={clsx(classes.expand, {
-                        [classes.expandOpen]: expanded,
+                        [classes.expandOpen]: expanded2,
                       })}
-                      onClick={handleExpandClick}
-                      aria-expanded={expanded}
+                      onClick={handleExpandClick2}
+                      aria-expanded2={expanded2}
                       aria-label="show more"
                     >
                       <ExpandMoreIcon />
                     </IconButton>
                   </CardActions>
-                  <Collapse in={expanded} timeout="auto" unmountOnExit>
+                  <Collapse in={expanded2} timeout="auto" unmountOnExit>
                     <CardContent>
                       <Typography paragraph>Method:</Typography>
                       <Typography paragraph>

@@ -34,20 +34,38 @@ function Map() {
                 <MapContainer center={center} zoom={10} scrollWheelZoom={true}>
 
                   <ImageOverlay
-                    url="https://i.imgur.com/Lha3Pz4.png"
+                    url="https://i.imgur.com/i7A6p9R.jpg"
                     bounds={[center, [center[0]-0.3, center[1]-0.3]]}
                   />
 
                   <ArtworkMarker
-                    location={center}
+                    location={[center[0]-0.02, center[1]-0.06]}
                     name={"Mona Lisa"}
                     imageSrc={"https://i.imgur.com/lmJy0b5.jpg"}
                   />
 
                   <ArtworkMarker
-                    location={[center[0]-0.3, center[1]-0.3]}
-                    name={"Another Artwork"}
-                    imageSrc={"https://i.imgur.com/lmJy0b5.jpg"}
+                    location={[center[0]-0.28, center[1]-0.28]}
+                    name={"The Raft of Medusa"}
+                    imageSrc={"https://imgur.com/whuhdZM.jpg"}
+                  />
+
+                  <ArtworkMarker
+                    location={[center[0]-0.02, center[1]-0.27]}
+                    name={"Liberty Leading \nthe People"}
+                    imageSrc={"https://imgur.com/FyNiO3m.jpg"}
+                  />
+
+                  <ArtworkMarker
+                    location={[center[0]-0.16, center[1]-0.02]}
+                    name={"Venus de Milo"}
+                    imageSrc={"https://imgur.com/yL3L1LG.jpg"}
+                  />
+
+                  <ArtworkMarker
+                    location={[center[0]-0.28, center[1]-0.06]}
+                    name={"Winged Victory of Samothrace"}
+                    imageSrc={"https://imgur.com/FIONP1i.jpg"}
                   />
 
                 </MapContainer>

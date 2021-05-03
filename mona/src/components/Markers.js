@@ -2,6 +2,8 @@ import React, {useState, useRef, useEffect} from "react";
 import { MapContainer, TileLayer, ImageOverlay, Marker, Popup } from "react-leaflet";
 import { GreenIcon, BlueIcon } from "./MarkerIcons.js";
 
+import L from 'leaflet';
+
 function changeColor(IconType, setIcon) {
   setIcon(IconType);
 }
@@ -9,12 +11,27 @@ function changeColor(IconType, setIcon) {
 export default function ArtworkMarker(props) {
 
     const [Icon, setIcon] = useState(GreenIcon);
+    const [IsReset, setIsReset] = useState(false);
 
     //Declare Hooks
     const markRef = useRef(null);
 
-    const handleClick = e => {
-      changeColor(GreenIcon, setIcon);
+    const handleClick = (e) => {
+        if(e.target.src != undefined)
+        {
+          if( e.target.src == 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png')
+          {
+            setIsReset(false);
+          }
+          else if( e.target.src == 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png')
+          {
+            setIsReset(true);
+          }
+        }
+        else {
+          setIsReset(true);
+        }
+        setIcon(GreenIcon);
     };
 
     React.useEffect( () => {
@@ -31,11 +48,11 @@ export default function ArtworkMarker(props) {
           position={props.location}
           icon={Icon}
           eventHandlers={{
-            click: () => {
-              if(Icon == GreenIcon)
-                changeColor(BlueIcon, setIcon);
+            click: (e) => {
+              if(IsReset)
+                setIcon(GreenIcon);
               else
-                changeColor(GreenIcon, setIcon);
+                setIcon(BlueIcon);
             },
           }}
         >
@@ -43,10 +60,13 @@ export default function ArtworkMarker(props) {
             position={props.location}
           >
             <center>{props.name}</center>
-            <img
-                src={props.imageSrc}
-                height="100px"
-                width="100px"/>
+            <center>
+              <img
+                  src={props.imageSrc}
+                  height="100px"
+                  width="100px"
+              />
+            </center>
           </Popup>
         </Marker>
     );

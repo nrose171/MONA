@@ -32,14 +32,14 @@ function Explore() {
                 value={value}
                 onChange={handleChange}
               >
-                <MenuItem 
+                <MenuItem
                   value={"/Explore/Louvre"}
                   component={Link}
                   to={"/Explore/Louvre"}
                 >
                   Louvre Museum
                 </MenuItem>
-                <MenuItem 
+                <MenuItem
                   value={"/Explore/RandomMuseum"}
                   component={Link}
                   to={"/Explore/RandomMuseum"}

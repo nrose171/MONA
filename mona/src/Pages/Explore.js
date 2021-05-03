@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import {BrowserRouter as Router, Switch, Route, BrowserRouter} from 'react-router-dom';
 import Louvre from "./Museums/Louvre";
-import RandomMuseum from "./Museums/RandomMuseum";
+import Smithsonian from "./Museums/Smithsonian";
 import { makeStyles, FormControl, InputLabel, Select, MenuItem, Box } from "@material-ui/core";
 
 
@@ -40,18 +40,18 @@ function Explore() {
                   Louvre Museum
                 </MenuItem>
                 <MenuItem 
-                  value={"/Explore/RandomMuseum"}
+                  value={"/Explore/Smithsonian"}
                   component={Link}
-                  to={"/Explore/RandomMuseum"}
+                  to={"/Explore/Smithsonian"}
                 >
-                  Some Random Museum
+                  Smithsonian
                 </MenuItem>
               </Select>
               </FormControl>
             </Box>
             <Switch>
               <Route path="/Explore/Louvre" exact component={Louvre}/>
-              <Route path="/Explore/RandomMuseum" component={RandomMuseum} />
+              <Route path="/Explore/Smithsonian" component={Smithsonian} />
             </Switch>
         </Router>
       </div>

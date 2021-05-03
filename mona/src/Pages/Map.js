@@ -7,7 +7,7 @@ import { MapContainer, TileLayer, ImageOverlay, Marker, Popup, Icon } from "reac
 import { Button, Box } from "@material-ui/core";
 import { borders } from "@material-ui/system";
 
-import { GreenIcon } from "../components/GreenIcon.js"
+import { GreenIcon, BlueIcon } from "../components/MarkerIcons.js"
 
 import './Pages.css';
 
@@ -40,7 +40,7 @@ function Map() {
                     position={center}
                     eventHandlers={{
                       click: () => {
-                        console.log('marker clicked')
+                        this.icon = {}
                       },
                     }}
                     icon={GreenIcon}

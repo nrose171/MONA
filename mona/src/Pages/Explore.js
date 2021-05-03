@@ -32,7 +32,7 @@ function Explore() {
                 value={value}
                 onChange={handleChange}
               >
-                <MenuItem 
+                <MenuItem
                   value={"/Explore/Louvre"}
                   component={Link}
                   to={"/Explore/Louvre"}

@@ -78,7 +78,7 @@ function Louvre() {
 
   return (
     <div>
-        <h1 style={{marginTop: '0vh'}}> Just Another Museum</h1>
+        <h1 style={{marginTop: '0vh'}}> Louvre Museum</h1>
         <Grid container spacing={1} direction="column">
           <Grid item xs={12} container spacing={3}>
 

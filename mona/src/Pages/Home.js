@@ -20,148 +20,91 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   heroContent: {
-    padding: theme.spacing(8, 0, 6),
-  },
-  heroButtons: {
-    marginTop: theme.spacing(4),
+    padding: theme.spacing(8, 0, 4),
   },
   cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
   },
   card: {
-    height: '100%',
+    height: '80%',
     display: 'flex',
     flexDirection: 'column',
+    border: '2px solid', 
+    borderColor: "#668cff"
   },
   cardMedia: {
-    paddingTop: '56.25%', // 16:9
+    width: 500,
+    height: 300
   },
   cardContent: {
     flexGrow: 1,
   },
 }));
 
-const cards = [1, 2, 3,4,5,6,7];
+const cards = [1, 2, 3];
 
 function Home() {
   const classes = useStyles();
-
-  const handleButton1 = () => {
-    scrollToTarget("here");
-  }
-
-  const handleButton2 = () => {
-    scrollToTarget("cards");
-  }
-  
-  const scrollToTarget = (id) => {
-    const element = document.getElementById(id);
-    const offset = 100;
-    const bodyRect = document.body.getBoundingClientRect().top;
-    const elementRect = element.getBoundingClientRect().top;
-    const elementPosition = elementRect - bodyRect;
-    const offsetPosition = elementPosition - offset;
-        
-    window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-    });   
-  }
   
   return (
-    <React.Fragment>
       <div style={{backgroundColor: "#e6ebff"}}>
-        {/* Hero unit */}
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Typography style={{marginTop: '5vh'}} component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-              Album layout
+              Welcome to MONA
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              Something short and leading about the collection below—its contents, the creator, etc.
-              Make it short and sweet, but not too short so folks don&apos;t simply skip over it
-              entirely.
+              The purpose of MONA is to improve the overall experience of any visitor of a historical museum. 
+              MONA is able to show an interactive map where different pieces of artwork are located inside 
+              of the museum as well as descriptions of featured art.
             </Typography>
-            <div className={classes.heroButtons}>
-              <Grid container spacing={2} justify="center">
-                <Grid item>
-                  <Button
-                    onClick={handleButton1}
-                    variant={"contained"}
-                    color="primary">
-                    Main call to action
-                  </Button>
-                </Grid>
-                <Grid item>
-                  <Button
-                    onClick={handleButton2} 
-                    variant={"contained"} 
-                    color="primary">
-                    Secondary action
-                  </Button>
-                </Grid>
-              </Grid>
-            </div>
           </Container>
         </div>
-        <div id={"here"}>
-          <p>
-            Will Mateson<br />
-            Box 61<br />
-            Cleveland, Ohio<br />
-            Will Mateson<br />
-            Box 61<br />
-            Cleveland, Ohio<br />
-            Will Mateson<br />
-            Box 61<br />
-            Cleveland, Ohio<br />
-            Will Mateson<br />
-            Box 61<br />
-            Cleveland, Ohio<br />
-            Will Mateson<br />
-            Box 61<br />
-            Cleveland, Ohio<br />
-            Will Mateson<br />
-            Box 61<br />
-            Cleveland, Ohio<br />
-          </p>
-        </div>
-        <Container className={classes.cardGrid} maxWidth="md"  id={"cards"}>
-          {/* End hero unit */}
+        <Container className={classes.cardGrid}>
           <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
-                    title="Image title"
-                  />
-                  <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Heading
-                    </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe the content.
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      View
-                    </Button>
-                    <Button size="small" color="primary">
-                      Edit
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
+            <Grid item xs={5}>
+              <Card className={classes.card}>
+                <CardMedia
+                  className={classes.cardMedia}
+                  image="https://i.imgur.com/1NTtRmM.jpg"
+                />
+                <CardContent className={classes.cardContent}>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    The Louvre
+                  </Typography>
+                  <Typography>
+                    The Louvre, or the Louvre Museum, is the world's largest art museum and a historic monument in Paris, France, 
+                    and is best known for being the home of the Mona Lisa. 
+                    A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement.
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            
+            <Grid item xs={2}/>
+
+            <Grid item xs={5}>
+              <Card className={classes.card}>
+                <CardMedia
+                  className={classes.cardMedia}
+                  image="https://i.imgur.com/N0QWfnd.jpg"
+                />
+                <CardContent className={classes.cardContent}>
+                  <Typography gutterBottom variant="h5" component="h2">
+                  The National Museum of Natural History
+                  </Typography>
+                  <Typography>
+                    The National Museum of Natural History is a natural history museum administered by the Smithsonian Institution, 
+                    located on the National Mall in Washington, D.C., United States. 
+                    The museum's collections contain over 145 million specimens and artifacts, the largest natural history collection in the world.
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          </Grid>   
+          
         </Container>
       </div>
-    </React.Fragment>
-  );
+  )
 }
 
 export default Home;

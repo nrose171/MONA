@@ -52,10 +52,24 @@ export default function ArtworkMarker(props) {
               else
                 setIcon(BlueIcon);
             },
+            // popupOpen: (e) => {
+            //   setIcon(BlueIcon);
+            // },
+            // popupClose: (e) => {
+            //   setIcon(GreenIcon);
+            // },
           }}
         >
           <Popup
             position={props.location}
+            eventHandlers={{
+            // popupOpen: (e) => {
+            //   setIcon(BlueIcon);
+            // },
+            // popupClose: (e) => {
+            //   setIcon(GreenIcon);
+            // },
+            }}
           >
             <center>{props.name}</center>
             <center>

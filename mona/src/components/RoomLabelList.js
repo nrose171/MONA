@@ -12,16 +12,19 @@ const RoomLabelList = props => {
       <RoomLabel
         location={[center[0]-0.21, center[1]-0.21]}
         label={"1"}
+        popup={"Main Gallery"}
       />
 
       <RoomLabel
         location={[center[0]-0.21, center[1]-0.06]}
         label={"2"}
+        popup={"Marble Statue Room"}
       />
 
       <RoomLabel
         location={[center[0]-0.07, center[1]-0.06]}
         label={"3"}
+        popup={"Mona Lisa Room"}
       />
     </div>
   );

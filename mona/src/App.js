@@ -17,7 +17,7 @@ function App() {
 
 
   return (
-    <div>
+    <div style={{height: '100vh', minHeight: '100vh', backgroundColor: '#e6ebff'}}>
       <BrowserRouter>
         <Route
           path="/"

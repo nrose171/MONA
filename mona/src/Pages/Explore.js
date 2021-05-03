@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import {BrowserRouter as Router, Switch, Route, BrowserRouter} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Louvre from "./Museums/Louvre";
-import RandomMuseum from "./Museums/RandomMuseum";
+import Smithsonian from "./Museums/Smithsonian";
 import { makeStyles, FormControl, InputLabel, Select, MenuItem, Box } from "@material-ui/core";
 
 
@@ -23,7 +23,7 @@ function Explore() {
 
   return (
       <div>
-        <h1 style={{marginTop: '10vh'}}> Explore</h1>
+        <h1 style={{marginTop: '10vh'}}></h1>
         <Router>
             <Box position={"absolute"} left={'40%'}>
               <FormControl className={classes.formControl}>
@@ -39,19 +39,19 @@ function Explore() {
                 >
                   Louvre Museum
                 </MenuItem>
-                <MenuItem
-                  value={"/Explore/RandomMuseum"}
+                <MenuItem 
+                  value={"/Explore/Smithsonian"}
                   component={Link}
-                  to={"/Explore/RandomMuseum"}
+                  to={"/Explore/Smithsonian"}
                 >
-                  Some Random Museum
+                  Smithsonian
                 </MenuItem>
               </Select>
               </FormControl>
             </Box>
             <Switch>
               <Route path="/Explore/Louvre" exact component={Louvre}/>
-              <Route path="/Explore/RandomMuseum" component={RandomMuseum} />
+              <Route path="/Explore/Smithsonian" component={Smithsonian} />
             </Switch>
         </Router>
       </div>

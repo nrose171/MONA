@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Container from '@material-ui/core/Container';
-import { Grid, Box, Typography, IconButton, Collapse, CardActions, CardContent, CardMedia, CardHeader, Card, makeStyles } from "@material-ui/core";
-
+import { Grid, Box, Typography, IconButton, Collapse, CardActions, CardContent, CardMedia, CardHeader, Card, makeStyles, Button, ButtonBase } from "@material-ui/core";
+import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
@@ -27,10 +27,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3];
-
 function Home() {
   const classes = useStyles();
+
+  const [openLouvre, setOpenLouvre] = React.useState(false);
+  const [openSmith, setOpenSmith] = React.useState(false);
+
+  const handleClose = () => {
+    setOpenLouvre(false);
+    setOpenSmith(false);
+  };
   
   return (
       <div style={{backgroundColor: "#e6ebff"}}>
@@ -50,22 +56,40 @@ function Home() {
           <Grid container spacing={4}>
             <Grid item xs={5}>
               <Box boxShadow={3}>
-                <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image="https://i.imgur.com/1NTtRmM.jpg"
-                  />
-                  <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      The Louvre
-                    </Typography>
-                    <Typography>
-                      The Louvre, or the Louvre Museum, is the world's largest art museum and a historic monument in Paris, France, 
-                      and is best known for being the home of the Mona Lisa. 
-                      A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement.
-                    </Typography>
-                  </CardContent>
-                </Card>
+                <ButtonBase onClick={() => {setOpenLouvre(true)}}>
+                  <Card className={classes.card}>
+                    <CardMedia
+                      className={classes.cardMedia}
+                      image="https://i.imgur.com/1NTtRmM.jpg"
+                    />
+                    <CardContent className={classes.cardContent}>
+                      <Typography gutterBottom variant="h5" component="h2">
+                        The Louvre
+                      </Typography>
+                      <Typography>
+                        The Louvre, or the Louvre Museum, is the world's largest art museum and a historic monument in Paris, France, 
+                        and is best known for being the home of the Mona Lisa. 
+                        A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement.
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </ButtonBase>
+                <Dialog
+                  open={openLouvre}
+                  onClose={handleClose}
+                >
+                  <DialogTitle id="louvre">{"Want to learn more about The Louvre?"}</DialogTitle>
+                  <DialogContent>
+                    <DialogContentText id="alert-dialog-description">
+                      Go to the <b>EXPLORE</b> tab to see what The Louvre has to offer!
+                    </DialogContentText>
+                  </DialogContent>
+                  <DialogActions>
+                    <Button onClick={handleClose} color="primary" autoFocus>
+                      Okay!
+                    </Button>
+                  </DialogActions>
+                </Dialog>
               </Box>
             </Grid>
             
@@ -73,22 +97,40 @@ function Home() {
 
             <Grid item xs={5}>
               <Box boxShadow={3}>
-                <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image="https://i.imgur.com/N0QWfnd.jpg"
-                  />
-                  <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                    The National Museum of Natural History
-                    </Typography>
-                    <Typography>
-                      The National Museum of Natural History is a natural history museum administered by the Smithsonian Institution, 
-                      located on the National Mall in Washington, D.C., United States. 
-                      The museum's collections contain over 145 million specimens and artifacts, the largest natural history collection in the world.
-                    </Typography>
-                  </CardContent>
-                </Card>
+                <ButtonBase onClick={() => {setOpenSmith(true)}}>
+                  <Card className={classes.card}>
+                    <CardMedia
+                      className={classes.cardMedia}
+                      image="https://i.imgur.com/N0QWfnd.jpg"
+                    />
+                    <CardContent className={classes.cardContent}>
+                      <Typography gutterBottom variant="h5" component="h2">
+                      The National Museum of Natural History
+                      </Typography>
+                      <Typography>
+                        The National Museum of Natural History is a natural history museum administered by the Smithsonian Institution, 
+                        located on the National Mall in Washington, D.C., United States. 
+                        The museum's collections contain over 145 million specimens and artifacts, the largest natural history collection in the world.
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </ButtonBase>
+                <Dialog
+                  open={openSmith}
+                  onClose={handleClose}
+                >
+                  <DialogTitle id={"smith"}>{"Want to learn more about The Museum of Natural History?"}</DialogTitle>
+                  <DialogContent>
+                    <DialogContentText id="alert-dialog-description">
+                      Go to the <b>EXPLORE</b> tab to see what The Museum of Natural History has to offer!
+                    </DialogContentText>
+                  </DialogContent>
+                  <DialogActions>
+                    <Button onClick={handleClose} color="primary" autoFocus>
+                      Okay!
+                    </Button>
+                  </DialogActions>
+                </Dialog>
               </Box>
             </Grid>
           </Grid>   

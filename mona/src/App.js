@@ -32,7 +32,7 @@ function App() {
                     </Box>
                   </Grid>
                   <Grid item xs={1}>
-                    <Box pl={2} pt={2}>
+                    <Box pl={2} pt={1}>
                       <Typography className={classes.h3} variant="h1">MONA</Typography>
                     </Box>
                   </Grid>
@@ -98,7 +98,8 @@ const useStyles = makeStyles({
     color:'#668cff'
   },
   h3:{
-    fontSize:'50px',
+    fontSize:'60px',
+    fontFamily: `"Palatino Linotype", "Book Antiqua", "Palatino", serif`,
   }
 })
 

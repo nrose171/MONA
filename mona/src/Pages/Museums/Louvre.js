@@ -13,7 +13,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Grid, Box } from "@material-ui/core";
 
 import ArtworkCard from "../../components/ArtworkCard.js";
-import ArtworkCardList from "../../components/ArtworkCardList.js";
+import LouvreArtworkList from "../../components/LouvreArtworkList.js";
 
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -37,11 +37,11 @@ function Louvre() {
     const elementRect = element.getBoundingClientRect().top;
     const elementPosition = elementRect - bodyRect;
     const offsetPosition = elementPosition - offset;
-        
+
     window.scrollTo({
         top: offsetPosition,
         behavior: "smooth"
-    });   
+    });
   }
 
   const handleButton1 = () => {
@@ -59,12 +59,13 @@ function Louvre() {
                 color="primary">
                 Browse Featured Artwork
             </Button>
+
             <div
               style = {{
-                display: "flex", justifyContent: "center", alignItems: "center"
+                display: "flex", justifyContent: "center", alignItems: "center", marginTop: "20px"
               }}
             >
-              
+
               <Box
                 border={2}
                 style = {{
@@ -100,12 +101,12 @@ function Louvre() {
         </center>
         <Grid container spacing={0} direction="column" id="here">
 
-            <ArtworkCardList></ArtworkCardList>
+            <LouvreArtworkList></LouvreArtworkList>
 
         </Grid>
 
     </div>
-);
+  );
 }
 
 export default Louvre;

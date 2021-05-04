@@ -14,7 +14,7 @@ import { Grid, Box } from "@material-ui/core";
 
 import ArtworkCard from "./ArtworkCard";
 
-const ArtworkCardList = props => {
+const LouvreArtworkList = props => {
 
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -418,9 +418,11 @@ const ArtworkCardList = props => {
       >
       </ArtworkCard>
 
+
+
     </Grid>
 
   );
 }
 
-export default ArtworkCardList;
+export default LouvreArtworkList;

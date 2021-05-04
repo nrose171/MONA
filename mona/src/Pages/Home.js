@@ -30,14 +30,12 @@ const useStyles = makeStyles((theme) => ({
 function Home() {
   const classes = useStyles();
 
-  const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+  const [openLouvre, setOpenLouvre] = React.useState(false);
+  const [openSmith, setOpenSmith] = React.useState(false);
 
   const handleClose = () => {
-    setOpen(false);
+    setOpenLouvre(false);
+    setOpenSmith(false);
   };
   
   return (
@@ -58,7 +56,7 @@ function Home() {
           <Grid container spacing={4}>
             <Grid item xs={5}>
               <Box boxShadow={3}>
-                <ButtonBase onClick={handleClickOpen}>
+                <ButtonBase onClick={() => {setOpenLouvre(true)}}>
                   <Card className={classes.card}>
                     <CardMedia
                       className={classes.cardMedia}
@@ -77,10 +75,10 @@ function Home() {
                   </Card>
                 </ButtonBase>
                 <Dialog
-                  open={open}
+                  open={openLouvre}
                   onClose={handleClose}
                 >
-                  <DialogTitle>{"Want to learn more about The Louvre?"}</DialogTitle>
+                  <DialogTitle id="louvre">{"Want to learn more about The Louvre?"}</DialogTitle>
                   <DialogContent>
                     <DialogContentText id="alert-dialog-description">
                       Go to the <b>EXPLORE</b> tab to see what The Louvre has to offer!
@@ -99,22 +97,40 @@ function Home() {
 
             <Grid item xs={5}>
               <Box boxShadow={3}>
-                <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image="https://i.imgur.com/N0QWfnd.jpg"
-                  />
-                  <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                    The National Museum of Natural History
-                    </Typography>
-                    <Typography>
-                      The National Museum of Natural History is a natural history museum administered by the Smithsonian Institution, 
-                      located on the National Mall in Washington, D.C., United States. 
-                      The museum's collections contain over 145 million specimens and artifacts, the largest natural history collection in the world.
-                    </Typography>
-                  </CardContent>
-                </Card>
+                <ButtonBase onClick={() => {setOpenSmith(true)}}>
+                  <Card className={classes.card}>
+                    <CardMedia
+                      className={classes.cardMedia}
+                      image="https://i.imgur.com/N0QWfnd.jpg"
+                    />
+                    <CardContent className={classes.cardContent}>
+                      <Typography gutterBottom variant="h5" component="h2">
+                      The National Museum of Natural History
+                      </Typography>
+                      <Typography>
+                        The National Museum of Natural History is a natural history museum administered by the Smithsonian Institution, 
+                        located on the National Mall in Washington, D.C., United States. 
+                        The museum's collections contain over 145 million specimens and artifacts, the largest natural history collection in the world.
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </ButtonBase>
+                <Dialog
+                  open={openSmith}
+                  onClose={handleClose}
+                >
+                  <DialogTitle id={"smith"}>{"Want to learn more about The Museum of Natural History?"}</DialogTitle>
+                  <DialogContent>
+                    <DialogContentText id="alert-dialog-description">
+                      Go to the <b>EXPLORE</b> tab to see what The Museum of Natural History has to offer!
+                    </DialogContentText>
+                  </DialogContent>
+                  <DialogActions>
+                    <Button onClick={handleClose} color="primary" autoFocus>
+                      Okay!
+                    </Button>
+                  </DialogActions>
+                </Dialog>
               </Box>
             </Grid>
           </Grid>   

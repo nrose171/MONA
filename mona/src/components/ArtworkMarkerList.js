@@ -29,14 +29,14 @@ const ArtworkMarkerList = props => {
 
       <ArtworkMarker
         location={[center[0]-0.16, center[1]-0.02]}
-        name={"Venus de Milo"}
-        imageSrc={"https://imgur.com/yL3L1LG.jpg"}
+        name={"The Wedding Feast at Cana"}
+        imageSrc={"https://i.imgur.com/iVRyl3M.jpg"}
       />
 
       <ArtworkMarker
         location={[center[0]-0.28, center[1]-0.06]}
-        name={"Winged Victory of Samothrace"}
-        imageSrc={"https://imgur.com/FIONP1i.jpg"}
+        name={"A Calm Sea"}
+        imageSrc={"https://i.imgur.com/mT4mnpB.jpg"}
       />
     </div>
   );

@@ -131,7 +131,7 @@ const LouvreArtworkList = props => {
       {/*Element 3*/}
       <ArtworkCard
         classes={classes}
-        media={classes.media3}
+        media={classes.media1}
         title={"Portrait of René Descartes"}
         imageSrc={"https://i.imgur.com/CTbtiOB.jpg"}
         artist={"Frans Hals"}
@@ -168,7 +168,7 @@ const LouvreArtworkList = props => {
       {/*Element 4*/}
       <ArtworkCard
         classes={classes}
-        media={classes.media1}
+        media={classes.media2}
         title={"The Entombment of Christ"}
         imageSrc={"https://i.imgur.com/itQJiX6.jpg"}
         artist={"Titian"}
@@ -200,7 +200,7 @@ const LouvreArtworkList = props => {
       {/*Element 5*/}
       <ArtworkCard
         classes={classes}
-        media={classes.media1}
+        media={classes.media2}
         title={"Raft of Medusa"}
         imageSrc={"https://i.imgur.com/a5xwdnB.jpg"}
         artist={"Théodore Géricault"}
@@ -239,7 +239,7 @@ const LouvreArtworkList = props => {
       {/*Element 6*/}
       <ArtworkCard
         classes={classes}
-        media={classes.media1}
+        media={classes.media3}
         title={"Coronation of Napoleon"}
         imageSrc={"https://i.imgur.com/n07Knl0.jpg"}
         artist={"Jacques-Louis David"}
@@ -312,7 +312,7 @@ const LouvreArtworkList = props => {
       {/*Element 8*/}
       <ArtworkCard
         classes={classes}
-        media={classes.media1}
+        media={classes.media2}
         title={"A Calm Sea"}
         imageSrc={"https://i.imgur.com/2RqbN5p.jpg"}
         artist={"Claude-Joseph Vernet"}
@@ -357,7 +357,7 @@ const LouvreArtworkList = props => {
       {/*Element 9*/}
       <ArtworkCard
         classes={classes}
-        media={classes.media1}
+        media={classes.media2}
         title={"The Wedding Feast at Cana"}
         imageSrc={"https://i.imgur.com/iVRyl3M.jpg"}
         artist={"Paolo Veronese"}

@@ -52,7 +52,7 @@ function Louvre() {
     <div className = {"museum-page"}>
       <div>
             <br/>
-            <h1>lOUVRE MUSEUM</h1>
+            <h1>The Louvre</h1>
             <Button
                 onClick={handleButton1}
                 variant={"contained"}

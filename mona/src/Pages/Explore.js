@@ -73,14 +73,14 @@ function Explore() {
                   component={Link}
                   to={"/Explore/Louvre"}
                 >
-                  Louvre Museum
+                  The Louvre
                 </MenuItem>
                 <MenuItem 
                   value={"/Explore/Smithsonian"}
                   component={Link}
                   to={"/Explore/Smithsonian"}
                 >
-                  Smithsonian
+                  The Smithsonian
                 </MenuItem>
               </Select>
               </FormControl>

@@ -51,25 +51,30 @@ function Louvre() {
   return (
     <div className = {"museum-page"}>
       <div>
-            <br/>
-            <h1>The Louvre</h1>
+            <br/><br/><br/><br/><br/>
+            <center>
             <Button
-                onClick={handleButton1}
-                variant={"contained"}
-                color="primary">
-                Browse Featured Artwork
-            </Button>
+                  onClick={handleButton1}
+                  variant={"contained"}
+                  color="primary"
+              >
+                  Browse Featured Artwork
+              </Button>
+              <h1 className="museum-page-header" style={{
+                margin: "20px 0px 0px 0px", width: "70vw", fontSize: "40px", backgroundColor: "black", border: "solid", borderColor: "black", color: "white"
+              }}>The Louvre</h1>
+            </center>
 
             <div
               style = {{
-                display: "flex", justifyContent: "center", alignItems: "center", marginTop: "20px"
+                display: "flex", justifyContent: "center", alignItems: "center"
               }}
             >
 
               <Box
                 border={2}
                 style = {{
-                  display: "flex", justifyContent: "center", alignItems: "center", width: "70vw"
+                  display: "flex", justifyContent: "center", alignItems: "center", width: "70vw", height: "35vw"
                 }}
               >
                 <MapContainer

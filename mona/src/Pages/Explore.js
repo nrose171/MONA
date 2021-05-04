@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Louvre from "./Museums/Louvre";
 import Smithsonian from "./Museums/Smithsonian";
 import { makeStyles, FormControl, InputLabel, Select, MenuItem, Box } from "@material-ui/core";
-
+import Scroll from "../components/Scroll"
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -25,6 +25,7 @@ function Explore() {
       <div>
         <h1 style={{marginTop: '10vh'}}></h1>
         <Router>
+            <Scroll showBelow={200} />
             <Box position={"absolute"} left={'40%'}>
               <FormControl className={classes.formControl}>
               <InputLabel>Museums</InputLabel>

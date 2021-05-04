@@ -28,12 +28,11 @@ const ArtworkCard = props => {
   const handleOnMouseLeave = () => {
     setBoxShadow("0px 0px 0px #000000");
   };
-
   return (
     <Grid item xs={4}>
         <Card
           className={props.classes.root}
-          style={{ backgroundColor: "#8da6f0", boxShadow: BoxShadow, }}
+          style={{ backgroundColor: "#A3BAFF", boxShadow: BoxShadow, cursor:'pointer' }}
           onClick={handleExpandClick}
           onMouseEnter={handleOnMouseEnter}
           onMouseLeave={handleOnMouseLeave}

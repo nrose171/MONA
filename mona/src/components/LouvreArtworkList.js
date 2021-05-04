@@ -22,7 +22,7 @@ const LouvreArtworkList = props => {
       backgroundColor: "#a3baff",
       border: '3px solid',
       borderColor: "#003fff",
-      boxShadow: "5px 5px 10px #000000"
+      //boxShadow: "5px 5px 10px #000000"
     },
     media1: {
       height: 150,

@@ -99,11 +99,14 @@ function Louvre() {
         <center>
           <h1 style={{marginTop: '0vh'}}>Featured Artwork</h1>
         </center>
-        <Grid container spacing={0} direction="column" id="here">
 
-            <LouvreArtworkList></LouvreArtworkList>
+        <div className={"card-grid"}>
+          <Grid container spacing={0} direction="column" id="here">
 
-        </Grid>
+              <LouvreArtworkList></LouvreArtworkList>
+
+          </Grid>
+        </div>
 
     </div>
   );

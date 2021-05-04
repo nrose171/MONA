@@ -15,54 +15,69 @@ import { Grid, Box } from "@material-ui/core";
 const ArtworkCard = props => {
 
   const [expanded, setExpanded] = React.useState(false);
+  const [BoxShadow, setBoxShadow] = React.useState("0px 0px 0px #000000");
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
+  const handleOnMouseEnter = () => {
+    setBoxShadow("10px 10px 10px #000000");
+  };
+
+  const handleOnMouseLeave = () => {
+    setBoxShadow("0px 0px 0px #000000");
+  };
+
   return (
     <Grid item xs={4}>
-      <Card className={props.classes.root} style={{backgroundColor: "#8da6f0"}}>
-        <CardHeader
-          title={props.title}
-        />
-        <Grid item xs={12} container >
-        <Grid item xs={0}>
-          <Box width={props.media.width} height={props.media.height} pl={0} pt={0} border={3} borderColor={"#fff"} boxShadow={"2px 2px 8px #000"} marginTop={"21px"} marginLeft={"15px"}>
-            <CardMedia
-              className={props.media}
-              image={props.imageSrc}
-              title={props.title}
-            />
-          </Box>
-        </Grid>
-          <Grid item xs={0}>
-          <CardContent>
-            <Typography variant="h6" color="textPrimary" component="p">Artist: {props.artist}</Typography>
-            <Typography variant="h6" color="textPrimary" component="p">Year: {props.year}</Typography>
-            <Typography variant="h6" color="textPrimary" component="p">Type: {props.type}</Typography>
-          </CardContent>
+        <Card
+          className={props.classes.root}
+          style={{ backgroundColor: "#8da6f0", boxShadow: BoxShadow, }}
+          onClick={handleExpandClick}
+          onMouseEnter={handleOnMouseEnter}
+          onMouseLeave={handleOnMouseLeave}
+        >
+          <CardHeader
+            title={props.title}
+          />
+          <Grid item xs={12} container >
+            <Grid item xs={0}>
+              <Box width={props.media.width} height={props.media.height} pl={0} pt={0} border={3} borderColor={"#fff"} boxShadow={"2px 2px 8px #000"} marginTop={"21px"} marginLeft={"15px"}>
+                <CardMedia
+                  className={props.media}
+                  image={props.imageSrc}
+                  title={props.title}
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={0}>
+              <CardContent>
+                <Typography variant="h6" color="textPrimary" component="p">Artist: {props.artist}</Typography>
+                <Typography variant="h6" color="textPrimary" component="p">Year: {props.year}</Typography>
+                <Typography variant="h6" color="textPrimary" component="p">Type: {props.type}</Typography>
+              </CardContent>
+            </Grid>
           </Grid>
-        </Grid>
-        <CardActions disableSpacing>
-          <IconButton
-            className={clsx(props.classes.expand, {
-              [props.classes.expandOpen]: expanded,
-            })}
-            onClick={
-              handleExpandClick
-            }
-            aria-expanded={expanded}
-            aria-label="show more"
-          >
-            <ExpandMoreIcon />
-          </IconButton>
-        </CardActions>
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
-          <CardContent>
-            {props.content}
-          </CardContent>
-        </Collapse>
+          <CardActions disableSpacing>
+            <IconButton
+              className={clsx(props.classes.expand, {
+                [props.classes.expandOpen]: expanded,
+              })}
+              onClick={
+                handleExpandClick
+              }
+              aria-expanded={expanded}
+              aria-label="show more"
+            >
+              <ExpandMoreIcon />
+            </IconButton>
+          </CardActions>
+          <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <CardContent>
+              {props.content}
+            </CardContent>
+          </Collapse>
       </Card>
     </Grid>
   );

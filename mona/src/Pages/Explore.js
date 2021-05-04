@@ -54,10 +54,10 @@ function Explore() {
 
   return (
       <div>
-        <h1 style={{marginTop: '10vh'}}></h1>
         <Router >
             <Scroll showBelow={200} />
             <Box position={"absolute"} left={'40%'}>
+            <h1 style={{marginTop: '10vh'}}></h1>
               <FormControl className={classes.formControl}>
               <InputLabel><b>Museums</b></InputLabel>
               <Select

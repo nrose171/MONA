@@ -51,8 +51,9 @@ function Louvre() {
   return (
     <div className = {"museum-page"}>
       <div>
+      
             <br/>
-            <h1>The Louvre</h1>
+            <h1 style={{marginTop: '10vh'}}>The Louvre</h1>
             <Button
                 onClick={handleButton1}
                 variant={"contained"}

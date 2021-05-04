@@ -21,7 +21,7 @@ import { MapContainer, TileLayer, ImageOverlay, Marker, Popup } from "react-leaf
 import { Button } from "@material-ui/core";
 import { borders } from "@material-ui/system";
 
-import ArtworkMarkerList from "../../components/ArtworkMarkerList.js";
+import ArtworkMarkerList from "../../components/SmithsonianArtworkMarkerList.js";
 import RoomLabelList from "../../components/RoomLabelList.js";
 
 import '../Pages.css';
@@ -52,7 +52,7 @@ function Louvre() {
     <div className = {"museum-page"}>
       <div>
             <br/>
-            <h1>The Smithsonian</h1>
+            <h1 style={{marginTop: '10vh'}}>The Smithsonian</h1>
             <Button
                 onClick={handleButton1}
                 variant={"contained"}

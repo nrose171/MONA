@@ -54,37 +54,37 @@ function Explore() {
 
   return (
       <div>
-        <h1 style={{marginTop: '10vh'}}></h1>
-        <Router>
+        <Router >
             <Scroll showBelow={200} />
-              <Box position={"absolute"} left={'41%'}>
-                <FormControl className={classes.formControl}>
-                <InputLabel><b>Museums</b></InputLabel>
-                <Select
-                  value={value}
-                  onChange={handleChange}
-                  disableUnderline
-                  classes={{ root: minimalSelectClasses.select}}
-                  MenuProps={menuProps}
-                  IconComponent={iconComponent}
+            <Box position={"absolute"} left={'41%'}>
+            <h1 style={{marginTop: '10vh'}}></h1>
+              <FormControl className={classes.formControl}>
+              <InputLabel><b>Museums</b></InputLabel>
+              <Select
+                value={value}
+                onChange={handleChange}
+                disableUnderline
+                classes={{ root: minimalSelectClasses.select}}
+                MenuProps={menuProps}
+                IconComponent={iconComponent}
+              >
+                <MenuItem
+                  value={"/Explore/Louvre"}
+                  component={Link}
+                  to={"/Explore/Louvre"}
                 >
-                  <MenuItem
-                    value={"/Explore/Louvre"}
-                    component={Link}
-                    to={"/Explore/Louvre"}
-                  >
-                    Louvre Museum
-                  </MenuItem>
-                  <MenuItem
-                    value={"/Explore/Smithsonian"}
-                    component={Link}
-                    to={"/Explore/Smithsonian"}
-                  >
-                    Smithsonian
-                  </MenuItem>
-                </Select>
-                </FormControl>
-              </Box>
+                  The Louvre
+                </MenuItem>
+                <MenuItem
+                  value={"/Explore/Smithsonian"}
+                  component={Link}
+                  to={"/Explore/Smithsonian"}
+                >
+                  The Smithsonian
+                </MenuItem>
+              </Select>
+              </FormControl>
+            </Box>
             <Switch>
               <Route path="/Explore/Louvre" exact component={Louvre}/>
               <Route path="/Explore/Smithsonian" component={Smithsonian} />

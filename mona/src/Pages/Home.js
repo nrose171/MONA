@@ -25,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
   cardContent: {
     flexGrow: 1,
   },
+  mona: {
+    fontFamily: `"Palatino Linotype", "Book Antiqua", "Palatino", serif`,
+  }
 }));
 
 function Home() {
@@ -42,11 +45,16 @@ function Home() {
       <div style={{backgroundColor: "#e6ebff"}}>
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
-            <Typography style={{marginTop: '5vh'}} component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-              Welcome to MONA
-            </Typography>
+            <div style={{display: "flex"}}>
+              <Typography style={{marginTop: '5vh'}} component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+                Welcome to
+              </Typography>
+              <Typography className={classes.mona} style={{marginLeft: 15, marginTop: '5vh'}} component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+                MONA
+              </Typography>
+            </div>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              The purpose of MONA is to improve the overall experience of any visitor of a historical museum. 
+              The purpose of MONA (Map of Nice Artwork) is to improve the overall experience of any visitor of a historical museum. 
               MONA is able to show an interactive map where different pieces of artwork are located inside 
               of the museum as well as descriptions of featured art.
             </Typography>

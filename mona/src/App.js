@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import Explore from "./Pages/Explore";
 import Home from "./Pages/Home";
 import Map from "./Pages/Map";
+import SignIn from "./Pages/SignIn";
 import { Link } from 'react-router-dom';
 import {BrowserRouter as Router, Switch, Route, BrowserRouter} from 'react-router-dom';
 import { AppBar, Tabs, Tab, Grid, Typography, Box, makeStyles } from "@material-ui/core";
 
 function App() {
-  const routes = ["/", "/Explore", "/Map"];
+  const routes = ["/", "/Explore", "/SignIn"];
   const classes = useStyles();
   const [value, setValue] = useState("/");
 
@@ -36,7 +37,7 @@ function App() {
                     </Box>
                   </Grid>
                   <Grid item xs={6} />
-                  <Grid item xs={4}>
+                  <Grid item xs={3}>
                     <Box pt={2}>
                       <Tabs
                         value={value}
@@ -57,7 +58,7 @@ function App() {
                         to={routes[1]}
                       />
                       <Tab
-                        label={<span className={ value === "/Map" ? classes.activeTab : classes.customStyleOnTab}>Map</span>}
+                        label={<span className={ value === "/Sign In" ? classes.activeTab : classes.customStyleOnTab}>Sign In</span>}
                         value={routes[2]}
                         component={Link}
                         to={routes[2]}
@@ -72,10 +73,11 @@ function App() {
         />
 
 
+
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/Explore" component={Explore} />
-        <Route path="/Map" component={Map} />
+        <Route path="/SignIn" component={SignIn} />
       </Switch>
     </BrowserRouter>
     </div>

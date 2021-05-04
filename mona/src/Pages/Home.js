@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Container from '@material-ui/core/Container';
-import { Grid, Box, Typography, IconButton, Collapse, CardActions, CardContent, CardMedia, CardHeader, Card, makeStyles } from "@material-ui/core";
-
+import { Grid, Box, Typography, IconButton, Collapse, CardActions, CardContent, CardMedia, CardHeader, Card, makeStyles, Button, ButtonBase } from "@material-ui/core";
+import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
@@ -27,10 +27,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3];
-
 function Home() {
   const classes = useStyles();
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   
   return (
       <div style={{backgroundColor: "#e6ebff"}}>
@@ -50,22 +58,40 @@ function Home() {
           <Grid container spacing={4}>
             <Grid item xs={5}>
               <Box boxShadow={3}>
-                <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image="https://i.imgur.com/1NTtRmM.jpg"
-                  />
-                  <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      The Louvre
-                    </Typography>
-                    <Typography>
-                      The Louvre, or the Louvre Museum, is the world's largest art museum and a historic monument in Paris, France, 
-                      and is best known for being the home of the Mona Lisa. 
-                      A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement.
-                    </Typography>
-                  </CardContent>
-                </Card>
+                <ButtonBase onClick={handleClickOpen}>
+                  <Card className={classes.card}>
+                    <CardMedia
+                      className={classes.cardMedia}
+                      image="https://i.imgur.com/1NTtRmM.jpg"
+                    />
+                    <CardContent className={classes.cardContent}>
+                      <Typography gutterBottom variant="h5" component="h2">
+                        The Louvre
+                      </Typography>
+                      <Typography>
+                        The Louvre, or the Louvre Museum, is the world's largest art museum and a historic monument in Paris, France, 
+                        and is best known for being the home of the Mona Lisa. 
+                        A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement.
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </ButtonBase>
+                <Dialog
+                  open={open}
+                  onClose={handleClose}
+                >
+                  <DialogTitle>{"Want to learn more about The Louvre?"}</DialogTitle>
+                  <DialogContent>
+                    <DialogContentText id="alert-dialog-description">
+                      Go to the <b>EXPLORE</b> tab to see what The Louvre has to offer!
+                    </DialogContentText>
+                  </DialogContent>
+                  <DialogActions>
+                    <Button onClick={handleClose} color="primary" autoFocus>
+                      Okay!
+                    </Button>
+                  </DialogActions>
+                </Dialog>
               </Box>
             </Grid>
             

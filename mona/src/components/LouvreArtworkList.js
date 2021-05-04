@@ -20,12 +20,9 @@ const LouvreArtworkList = props => {
     root: {
       maxWidth: 645,
       backgroundColor: "#a3baff",
-      border: '2px solid',
-      borderColor: "#668cff"
-    },
-    media: {
-      height: 150,
-      width: 100,
+      border: '3px solid',
+      borderColor: "#003fff",
+      boxShadow: "5px 5px 10px #000000"
     },
     media1: {
       height: 150,
@@ -38,30 +35,6 @@ const LouvreArtworkList = props => {
     media3: {
       height: 150,
       width: 200,
-    },
-    media4: {
-      height: 150,
-      width: 100,
-    },
-    media5: {
-      height: 150,
-      width: 100,
-    },
-    media6: {
-      height: 150,
-      width: 100,
-    },
-    media7: {
-      height: 150,
-      width: 100,
-    },
-    media8: {
-      height: 150,
-      width: 100,
-    },
-    media9: {
-      height: 150,
-      width: 100,
     },
     expand: {
       transform: 'rotate(0deg)',
@@ -83,6 +56,7 @@ const LouvreArtworkList = props => {
       {/*Element 1*/}
       <ArtworkCard
         classes={classes}
+        media={classes.media1}
         title={"Mona Lisa"}
         imageSrc={"https://i.imgur.com/lmJy0b5.jpg"}
         artist={"Leonardo Da Vinci"}
@@ -123,6 +97,7 @@ const LouvreArtworkList = props => {
       {/*Element 2*/}
       <ArtworkCard
         classes={classes}
+        media={classes.media2}
         title={"Liberty Leading the People"}
         imageSrc={"https://i.imgur.com/KEZnomN.jpg"}
         artist={"Eugène Delacroix"}
@@ -156,6 +131,7 @@ const LouvreArtworkList = props => {
       {/*Element 3*/}
       <ArtworkCard
         classes={classes}
+        media={classes.media3}
         title={"Portrait of René Descartes"}
         imageSrc={"https://i.imgur.com/CTbtiOB.jpg"}
         artist={"Frans Hals"}
@@ -192,6 +168,7 @@ const LouvreArtworkList = props => {
       {/*Element 4*/}
       <ArtworkCard
         classes={classes}
+        media={classes.media1}
         title={"The Entombment of Christ"}
         imageSrc={"https://i.imgur.com/itQJiX6.jpg"}
         artist={"Titian"}
@@ -223,6 +200,7 @@ const LouvreArtworkList = props => {
       {/*Element 5*/}
       <ArtworkCard
         classes={classes}
+        media={classes.media1}
         title={"Raft of Medusa"}
         imageSrc={"https://i.imgur.com/a5xwdnB.jpg"}
         artist={"Théodore Géricault"}
@@ -261,6 +239,7 @@ const LouvreArtworkList = props => {
       {/*Element 6*/}
       <ArtworkCard
         classes={classes}
+        media={classes.media1}
         title={"Coronation of Napoleon"}
         imageSrc={"https://i.imgur.com/n07Knl0.jpg"}
         artist={"Jacques-Louis David"}
@@ -290,6 +269,7 @@ const LouvreArtworkList = props => {
       {/*Element 7*/}
       <ArtworkCard
         classes={classes}
+        media={classes.media1}
         title={"The Penitent Saint Jerome"}
         imageSrc={"https://i.imgur.com/3EZFTOS.jpg"}
         artist={"Titian"}
@@ -332,6 +312,7 @@ const LouvreArtworkList = props => {
       {/*Element 8*/}
       <ArtworkCard
         classes={classes}
+        media={classes.media1}
         title={"A Calm Sea"}
         imageSrc={"https://i.imgur.com/2RqbN5p.jpg"}
         artist={"Claude-Joseph Vernet"}
@@ -376,6 +357,7 @@ const LouvreArtworkList = props => {
       {/*Element 9*/}
       <ArtworkCard
         classes={classes}
+        media={classes.media1}
         title={"The Wedding Feast at Cana"}
         imageSrc={"https://i.imgur.com/iVRyl3M.jpg"}
         artist={"Paolo Veronese"}

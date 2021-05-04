@@ -27,16 +27,16 @@ const ArtworkCard = props => {
           title={props.title}
         />
         <Grid item xs={12} container >
-        <Grid item xs={3}>
-          <Box pl={2} pt={2}>
+        <Grid item xs={0}>
+          <Box width={props.media.width} height={props.media.height} pl={0} pt={0} border={3} borderColor={"#fff"} boxShadow={"2px 2px 8px #000"} marginTop={"21px"} marginLeft={"15px"}>
             <CardMedia
-              className={props.classes.media1}
+              className={props.media}
               image={props.imageSrc}
               title={props.title}
             />
           </Box>
         </Grid>
-          <Grid item xs={7}>
+          <Grid item xs={0}>
           <CardContent>
             <Typography variant="h6" color="textPrimary" component="p">Artist: {props.artist}</Typography>
             <Typography variant="h6" color="textPrimary" component="p">Year: {props.year}</Typography>

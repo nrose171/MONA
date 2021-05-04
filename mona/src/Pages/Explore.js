@@ -5,21 +5,52 @@ import Louvre from "./Museums/Louvre";
 import Smithsonian from "./Museums/Smithsonian";
 import { makeStyles, FormControl, InputLabel, Select, MenuItem, Box } from "@material-ui/core";
 import Scroll from "../components/Scroll"
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { useMinimalSelectStyles } from '@mui-treasury/styles/select/minimal';
+
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
     minWidth: 280,
+    marginTop: '10%'
   }
 }));
 
 function Explore() {
   const classes = useStyles();
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = React.useState(0);
 
   const handleChange = (event) => {
     setValue(event.target.value);
   };
+
+
+
+  const minimalSelectClasses = useMinimalSelectStyles();
+
+  const iconComponent = (props) => {
+    return (
+      <ExpandMoreIcon className={props.className + " " + minimalSelectClasses.icon}/>
+    )};
+
+  // moves the menu below the select input
+  const menuProps = {
+    classes: {
+      paper: minimalSelectClasses.paper,
+      list: minimalSelectClasses.list
+    },
+    anchorOrigin: {
+      vertical: "bottom",
+        horizontal: "left"
+    },
+    transformOrigin: {
+      vertical: "top",
+        horizontal: "left"
+    },
+    getContentAnchorEl: null
+  };
+
 
   return (
       <div>
@@ -28,10 +59,14 @@ function Explore() {
             <Scroll showBelow={200} />
             <Box position={"absolute"} left={'40%'}>
               <FormControl className={classes.formControl}>
-              <InputLabel>Museums</InputLabel>
+              <InputLabel><b>Museums</b></InputLabel>
               <Select
                 value={value}
                 onChange={handleChange}
+                disableUnderline
+                classes={{ root: minimalSelectClasses.select}}
+                MenuProps={menuProps}
+                IconComponent={iconComponent}
               >
                 <MenuItem
                   value={"/Explore/Louvre"}

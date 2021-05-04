@@ -21,7 +21,7 @@ import { MapContainer, TileLayer, ImageOverlay, Marker, Popup } from "react-leaf
 import { Button } from "@material-ui/core";
 import { borders } from "@material-ui/system";
 
-import ArtworkMarkerList from "../../components/ArtworkMarkerList.js";
+import ArtworkMarkerList from "../../components/LouvreArtworkMarkerList.js";
 import RoomLabelList from "../../components/RoomLabelList.js";
 
 import '../Pages.css';

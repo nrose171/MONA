@@ -10,9 +10,17 @@ import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { Grid, Box } from "@material-ui/core";
+import { Grid, Box, withStyles} from "@material-ui/core";
 
 import ArtworkCard from "./ArtworkCard";
+
+const CustomTypography = withStyles({
+  root: {
+    //color: "#FFFFFF",
+    fontFamily: 'Roboto'
+  }
+})(Typography);
+
 
 const LouvreArtworkList = props => {
 
@@ -64,7 +72,7 @@ const LouvreArtworkList = props => {
         type={"Oil Painting"}
         content={
           <div>
-            <Typography paragraph align={"justify"}>
+            <CustomTypography paragraph align={"justify"}>
             This is the most famous portrait in the world. It
             shows Lisa Gherardini, wife of the Florentine silk
             merchant Francesco del Giocondo – hence her Italian
@@ -77,8 +85,8 @@ const LouvreArtworkList = props => {
             contours and contrasts. Leonardo captured the sitter
             turning towards the viewer in a natural movement that
             brings the painting to life.
-            </Typography>
-            <Typography paragraph align={"justify"}>
+            </CustomTypography>
+            <CustomTypography paragraph align={"justify"}>
             On 21 August 1911, panic broke out at the Louvre…the
             Mona Lisa had disappeared! The news spread like wildfire
             and generous rewards were promised for her return – but
@@ -88,7 +96,7 @@ const LouvreArtworkList = props => {
             famous painting to an Italian art dealer...who alerted the
             authorities. So the Mona Lisa was recovered – and her fame
             was all the greater.
-            </Typography>
+            </CustomTypography>
           </div>
         }
       >
@@ -105,12 +113,12 @@ const LouvreArtworkList = props => {
         type={"Oil on Canvas"}
         content={
           <div>
-            <Typography paragraph align={"justify"}>
+            <CustomTypography paragraph align={"justify"}>
               Delacroix is best known today for this painting. It was inspired
               by the ‘Three Glorious Days’ of the July 1830 Revolution when the
               people of Paris rose up against King Charles X.
-            </Typography>
-            <Typography paragraph align={"justify"}>
+            </CustomTypography>
+            <CustomTypography paragraph align={"justify"}>
               The Parisians are depicted breaking through a barricade. The
               female figure at the top of the composition – part classical
               goddess, part woman of the people – urges the crowd forward and
@@ -122,7 +130,7 @@ const LouvreArtworkList = props => {
               This famous allegorical/historical painting, often referenced
               in art and advertising, stands as a symbol of liberty and freedom
               fights.
-            </Typography>
+            </CustomTypography>
           </div>
         }
       >
@@ -139,7 +147,7 @@ const LouvreArtworkList = props => {
         type={"Oil on Canvas"}
         content={
           <div>
-            <Typography paragraph align={"justify"}>
+            <CustomTypography paragraph align={"justify"}>
               A portrait of the 17th-century French philosopher René Descartes.
               Hals paints him in three-quarters view. Descartes looks at the viewer
               with a confident, thoughtful, and inquisitive expression. The fingers
@@ -147,8 +155,8 @@ const LouvreArtworkList = props => {
               hand. Someone has scratched this portrait by Hals after he completed it. There
               are zigzagging scratches in Descartes’ face. Probably this was done by someone
               who did not agree with some of the revolutionary ideas of Descartes.
-            </Typography>
-            <Typography paragraph align={"justify"}>
+            </CustomTypography>
+            <CustomTypography paragraph align={"justify"}>
               In 1648, while Descartes lives in the Dutch Republic, Queen Christina of Sweden
               invites René Descartes to Sweden. Descartes accepts the invitation but does not
               move right away to Sweden. One of Descartes’ Dutch friends is the Catholic priest
@@ -159,7 +167,7 @@ const LouvreArtworkList = props => {
               paint the portrait quicker than he usually does. He decides to use a small wooden
               panel of 5.5 x 7.5 inch (14 x 19 cm). It is the smallest painting he created during
               his life that was not on a copper background.
-            </Typography>
+            </CustomTypography>
           </div>
         }
       >
@@ -176,22 +184,22 @@ const LouvreArtworkList = props => {
         type={"Oil on Canvas"}
         content={
           <div>
-            <Typography paragraph align={"justify"}>
+            <CustomTypography paragraph align={"justify"}>
               One of Titian's most significant contributions to painting was his style of brushwork.
               Titian broke from the tradition of meticulously painting every minute detail from life,
               instead using expressive bold strokes and dots of color to create illusions, which
               captured reality.  His technique revolutionized painting in the 16th century.  Another
               thing he was known for were his sophisticated mathematical compositions within his works,
               breaking from earlier more symmetrical paintings.
-            </Typography>
-            <Typography paragraph align={"justify"}>
+            </CustomTypography>
+            <CustomTypography paragraph align={"justify"}>
               The Entombment of Christ was a work which embodied the new harmony of the Renaissance.
               In this composition the figures are placed with a mathematical precision forming two
               isosceles triangles within the painting.  The curving shapes of several others then
               enhance these triangular shapes. This emphasizes the harmonious proportions that were
               used in ancient Greek art and revived in the Renaissance.  His use of mathematics within
               the work draws the eye of the viewer into the action taking place.
-            </Typography>
+            </CustomTypography>
           </div>
         }
       >
@@ -208,7 +216,7 @@ const LouvreArtworkList = props => {
         type={"Oil on Canvas"}
         content={
           <div>
-            <Typography paragraph align={"justify"}>
+            <CustomTypography paragraph align={"justify"}>
               The French Revolution greatly stimulated interest in the depiction of contemporary
               events, but, after the fall of Napoleon in 1815, few artists were disposed to depict
               such subjects. Géricault was something of an exception, but he was separated from his
@@ -219,8 +227,8 @@ const LouvreArtworkList = props => {
               of Senegal. Because of a shortage of lifeboats, some 150 survivors embarked on a raft and were
               decimated by starvation during a 13-day ordeal, which descended into murder and cannibalism.
               Only a handful remained when they were rescued at sea.
-            </Typography>
-            <Typography paragraph align={"justify"}>
+            </CustomTypography>
+            <CustomTypography paragraph align={"justify"}>
               The shipwreck had scandalous political implications in France—the incompetent captain,
               who had gained the position because of connections to the Bourbon Restoration government,
               fought to save himself and senior officers while leaving the lower ranks to die—and so
@@ -230,7 +238,7 @@ const LouvreArtworkList = props => {
               dignity and carry it far beyond mere contemporary reportage. The portrayal of the dead and dying,
               developed within a dramatic, carefully constructed composition, addressed a contemporary subject
               with remarkable and unprecedented passion.
-            </Typography>
+            </CustomTypography>
           </div>
         }
       >
@@ -247,7 +255,7 @@ const LouvreArtworkList = props => {
         type={"Oil Painting"}
         content={
           <div>
-            <Typography paragraph align={"justify"}>
+            <CustomTypography paragraph align={"justify"}>
               “The Coronation of Napoleon” by Jacques-Louis David shows all eyes turned towards Napoleon and
               the crown. He is the central subject of this composition. Napoleon is standing, dressed in coronation
               robes similar to those of Roman emperors. The coronation of Napoleon as Emperor that took place on Sunday,
@@ -260,7 +268,7 @@ const LouvreArtworkList = props => {
               reason. However, in order not to jeopardize the new balance between Church and State, the Pope accepted the request
               to attend the coronation. However, at the moment, the Pope was to crown Napoleon. The Emporer took the crown from
               the Pope and put it on his head. This act was seen as a public humiliation of the Pope.
-            </Typography>
+            </CustomTypography>
           </div>
         }
       >
@@ -277,7 +285,7 @@ const LouvreArtworkList = props => {
         type={"Oil on Canvas"}
         content={
           <div>
-            <Typography paragraph align={"justify"}>
+            <CustomTypography paragraph align={"justify"}>
               Titian depicted Saint Jerome on various occasions, one of the earliest examples of which is now
               in the Musée du Louvre, Paris. In that horizontal composition of around 1530 the kneeling saint
               occupies the centre of the canvas in a clearing in a leafy landscape. Titian conceives the present
@@ -288,8 +296,8 @@ const LouvreArtworkList = props => {
               for the present painting. It now has an arched top that was added in the 18th century. In the Brera
               version Titian included symbols that refer to meditation and the ascetic life such as the skull,
               hourglass, books and ivy twining over the rocks that form the saint’s altar.
-            </Typography>
-            <Typography paragraph align={"justify"}>
+            </CustomTypography>
+            <CustomTypography paragraph align={"justify"}>
               In the present version, executed twenty years after the Brera composition, Titian omitted these
               elements and here focuses on the figure, which takes on a more important physical presence in the
               centre of the canvas. Jerome is enveloped in a wild landscape to which the colour range and
@@ -303,7 +311,7 @@ const LouvreArtworkList = props => {
               colour is in Jerome’s red tunic and in a small area of red in the sky. The use of red, which is
               particularly rapidly painted on the saint’s left leg, functions as another way of emphasising the principal
               motif of the composition.
-            </Typography>
+            </CustomTypography>
           </div>
         }
       >
@@ -320,7 +328,7 @@ const LouvreArtworkList = props => {
         type={"Oil on Canvas"}
         content={
           <div>
-            <Typography paragraph align={"justify"}>
+            <CustomTypography paragraph align={"justify"}>
               Claude-Joseph Vernet was famous for his marine views and was the French artist
               most admired in this sub-genre around the mid-18th century. Vernet first trained
               with his father, a local painter in Avignon, then continued his studies with
@@ -337,8 +345,8 @@ const LouvreArtworkList = props => {
               to the Salon from Italy, as a result of which his fame extended to his own country.
               In 1751 the Marquis de Marigny tried to pursuade Vernet to return to France, albeit
               without success at that date.
-            </Typography>
-            <Typography paragraph align={"justify"}>
+            </CustomTypography>
+            <CustomTypography paragraph align={"justify"}>
               Vernet’s repertoire included views of picturesque locations, topographical views
               and imaginary landscapes. It was however, his marine views that were most appreciated
               and which gained him an international reputation. These views were particularly
@@ -348,7 +356,7 @@ const LouvreArtworkList = props => {
               sea, as well as series that depicted the coast at different times of day and under
               different lighting conditions. Vernet’s coastal paintings reflect his study of the
               work of Claude Lorraine although in many ways they are considerably less idealised.
-            </Typography>
+            </CustomTypography>
           </div>
         }
       >
@@ -365,7 +373,7 @@ const LouvreArtworkList = props => {
         type={"Oil Painting"}
         content={
           <div>
-            <Typography paragraph align={"justify"}>
+            <CustomTypography paragraph align={"justify"}>
               Ranked among the leading Old Masters of Mannerist painting, Paolo Veronese is noted in
               particular for his enormous banquet-scenes, such as: Supper in Emmaus (1560), Wedding
               Feast at Cana (1563), Feast in the House of Simon (1570-2, Sabauda Gallery, Turin),
@@ -382,8 +390,8 @@ const LouvreArtworkList = props => {
               in the Benedictine monastery on the island of San Giorgio Maggiore, Venice. The artist's fee
               was 324 ducats, plus board and lodging plus a barrel of wine. Helped by his brother, Benedetto
               Caliari (1538-98), Veronese completed the huge painting in fifteen months.
-            </Typography>
-            <Typography paragraph align={"justify"}>
+            </CustomTypography>
+            <CustomTypography paragraph align={"justify"}>
               The theme of the painting is based on the Bible story told in St John's Gospel (John 2:1-11),
               concerning a marriage held at Cana, Galilee, attended by Mary, Jesus and his disciples. Towards
               the end of the wedding feast, as the wine begins to run out, Jesus asks that stone jars be filled
@@ -394,7 +402,7 @@ const LouvreArtworkList = props => {
               di Santa Maria della Salute) by Tintoretto; "Marriage at Cana" (1566, Museum of Fine Arts, Budapest)
               by Giorgio Vasari. However, unlike most conventional interpretations, Veronese transposed the Bible
               story to the more modern setting of a typically extravagant Venetian wedding.
-            </Typography>
+            </CustomTypography>
           </div>
         }
       >

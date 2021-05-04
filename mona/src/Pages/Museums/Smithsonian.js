@@ -28,11 +28,11 @@ import '../Pages.css';
 
 var center = [-34.43537, 150.45502];
 
-function Louvre() {
+function Smithsonian() {
 
   const scrollToTarget = (id) => {
     const element = document.getElementById(id);
-    const offset = 80;
+    const offset = 100;
     const bodyRect = document.body.getBoundingClientRect().top;
     const elementRect = element.getBoundingClientRect().top;
     const elementPosition = elementRect - bodyRect;
@@ -61,8 +61,8 @@ function Louvre() {
                   Browse Featured Artwork
               </Button>
               <h1 className="museum-page-header" style={{
-                margin: "20px 0px 0px 0px", width: "70vw", fontSize: "40px", backgroundColor: "black", border: "solid", borderColor: "black", color: "white"
-              }}>The Smithsonian</h1>
+                margin: "20px 0px 0px 0px", width: "70vw", fontSize: "40px", backgroundColor: "black", border: "solid", borderColor: "black", color: "white", fontFamily: `"Palatino Linotype", "Book Antiqua", "Palatino", serif`
+              }}>THE SMITHSONIAN</h1>
             </center>
 
             <div
@@ -102,9 +102,9 @@ function Louvre() {
 
         <br/><br/>
         <center>
-          <h1 style={{marginTop: '0vh'}}>Featured Artwork</h1>
+          <h1 id="here" style={{marginTop: '0vh'}}>Featured Artwork</h1>
         </center>
-        <Grid container spacing={0} direction="column" id="here">
+        <Grid container spacing={0} direction="column">
 
             <SmithsonianArtworkList></SmithsonianArtworkList>
 
@@ -114,4 +114,4 @@ function Louvre() {
   );
 }
 
-export default Louvre;
+export default Smithsonian;

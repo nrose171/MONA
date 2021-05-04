@@ -56,7 +56,7 @@ function Explore() {
       <div>
         <Router >
             <Scroll showBelow={200} />
-            <Box position={"absolute"} left={'41%'}>
+            <Box position={"absolute"} left={'42.2%'}>
             <h1 style={{marginTop: '10vh'}}></h1>
               <FormControl className={classes.formControl}>
               <InputLabel><b>Museums</b></InputLabel>

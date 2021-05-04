@@ -239,7 +239,7 @@ const LouvreArtworkList = props => {
       {/*Element 6*/}
       <ArtworkCard
         classes={classes}
-        media={classes.media3}
+        media={classes.media2}
         title={"Coronation of Napoleon"}
         imageSrc={"https://i.imgur.com/n07Knl0.jpg"}
         artist={"Jacques-Louis David"}

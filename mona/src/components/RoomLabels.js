@@ -4,9 +4,10 @@ import L from 'leaflet';
 
 import './components.css';
 
+//Room label class that displays a circle with a number in the middle of it on top of the map//
 const RoomLabel = props => {
 
-    //Define vars
+    //Create icon with set text label for center of circle marker//
     const text = L.divIcon({
         className: 'my-div-icon circle-div-icon',
         html: props.label,

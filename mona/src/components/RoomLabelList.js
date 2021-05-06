@@ -3,6 +3,7 @@ import RoomLabel from "./RoomLabels.js";
 
 import './components.css';
 
+//Create a list of RoomLabel objects and return them//
 const RoomLabelList = props => {
 
   var center = props.center;

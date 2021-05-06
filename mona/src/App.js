@@ -82,7 +82,7 @@ function App() {
             </AppBar>
          )}
         />
-      {/*Tells React Router to switch to different pages*/}
+      {/*Tells React Router to render different pages*/}
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/Explore" component={Explore} />

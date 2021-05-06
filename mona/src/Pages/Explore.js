@@ -19,16 +19,17 @@ const useStyles = makeStyles((theme) => ({
 
 function Explore() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
 
+  const [value, setValue] = React.useState(0); //React hook that handles what museum to render onto page
+
+  // Event handler that sets selected museum to render onto app
   const handleChange = (event) => {
     setValue(event.target.value);
   };
 
-
-
   const minimalSelectClasses = useMinimalSelectStyles();
 
+  // Displays icon of the museum select dropdown
   const iconComponent = (props) => {
     return (
       <ExpandMoreIcon className={props.className + " " + minimalSelectClasses.icon}/>
@@ -55,40 +56,47 @@ function Explore() {
   return (
       <div>
         <Router >
-            <Scroll showBelow={200} />
-            <Box position={"absolute"} left={'42.2%'}>
-            <h1 style={{marginTop: '10vh'}}></h1>
-              <FormControl className={classes.formControl}>
-              <InputLabel><b>Museums</b></InputLabel>
-              <Select
-                value={value}
-                onChange={handleChange}
-                disableUnderline
-                classes={{ root: minimalSelectClasses.select}}
-                MenuProps={menuProps}
-                IconComponent={iconComponent}
+          {/*Scroll component with parameter that tells how far needed to scroll down before showing*/}
+          <Scroll showBelow={200} />
+
+          {/*Pushes Element to middle*/}
+          <Box position={"absolute"} left={'42.2%'}>
+          <h1 style={{marginTop: '10vh'}}></h1>
+            
+            {/*Museum dropdown menu*/}
+            <FormControl className={classes.formControl}>
+            <InputLabel><b>Museums</b></InputLabel>
+            <Select
+              value={value}
+              onChange={handleChange}
+              disableUnderline
+              classes={{ root: minimalSelectClasses.select}}
+              MenuProps={menuProps}
+              IconComponent={iconComponent}
+            >
+              <MenuItem
+                value={"/Explore/Louvre"}
+                component={Link}
+                to={"/Explore/Louvre"}
               >
-                <MenuItem
-                  value={"/Explore/Louvre"}
-                  component={Link}
-                  to={"/Explore/Louvre"}
-                >
-                  The Louvre
-                </MenuItem>
-                <MenuItem
-                  value={"/Explore/Smithsonian"}
-                  component={Link}
-                  to={"/Explore/Smithsonian"}
-                >
-                  The Smithsonian
-                </MenuItem>
-              </Select>
-              </FormControl>
-            </Box>
-            <Switch>
-              <Route path="/Explore/Louvre" exact component={Louvre}/>
-              <Route path="/Explore/Smithsonian" component={Smithsonian} />
-            </Switch>
+                The Louvre
+              </MenuItem>
+              <MenuItem
+                value={"/Explore/Smithsonian"}
+                component={Link}
+                to={"/Explore/Smithsonian"}
+              >
+                The Smithsonian
+              </MenuItem>
+            </Select>
+            </FormControl>
+          </Box>
+          
+          {/*Tells React Router to render different pages*/}
+          <Switch>
+            <Route path="/Explore/Louvre" exact component={Louvre}/>
+            <Route path="/Explore/Smithsonian" component={Smithsonian} />
+          </Switch>
         </Router>
       </div>
   );

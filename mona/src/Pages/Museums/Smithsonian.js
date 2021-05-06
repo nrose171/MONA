@@ -11,7 +11,7 @@ var center = [-34.43537, 150.45502]; //Center lattidue and longitude of the map 
 
 function Smithsonian() {
 
-  {/*Function that scrolls to certan element on page that also includes offset (AppBar)*/}
+  /*Function that scrolls to certan element on page that also includes offset (AppBar)*/
   const scrollToTarget = (id) => {
     const element = document.getElementById(id);
     const offset = 100;
@@ -25,7 +25,7 @@ function Smithsonian() {
         behavior: "smooth"
     });
   }
-  {/*Event handler that runs scrollToTarget function*/}
+  /*Event handler that runs scrollToTarget function*/
   const handleButton1 = () => {
     scrollToTarget("here");
   }

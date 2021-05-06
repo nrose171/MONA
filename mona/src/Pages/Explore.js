@@ -61,7 +61,7 @@ function Explore() {
 
           {/*Pushes Element to middle*/}
           <Box position={"absolute"} left={'42.2%'}>
-          <h1 style={{marginTop: '10vh'}}></h1>
+          <div style={{marginTop: '10vh'}}></div>
             
             {/*Museum dropdown menu*/}
             <FormControl className={classes.formControl}>
@@ -91,7 +91,7 @@ function Explore() {
             </Select>
             </FormControl>
           </Box>
-          
+
           {/*Tells React Router to render different pages*/}
           <Switch>
             <Route path="/Explore/Louvre" exact component={Louvre}/>

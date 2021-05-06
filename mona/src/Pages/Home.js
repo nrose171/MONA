@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, {  } from 'react';
 import Container from '@material-ui/core/Container';
-import { Grid, Box, Typography, IconButton, Collapse, CardActions, CardContent, CardMedia, CardHeader, Card, makeStyles, Button, ButtonBase } from "@material-ui/core";
+import { Grid, Box, Typography, CardContent, CardMedia, Card, makeStyles, Button, ButtonBase } from "@material-ui/core";
 import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({

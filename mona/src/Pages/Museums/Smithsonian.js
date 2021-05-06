@@ -1,35 +1,17 @@
 import React from "react";
-import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Grid, Box } from "@material-ui/core";
-
-import ArtworkCard from "../../components/ArtworkCard.js";
 import SmithsonianArtworkList from "../../components/SmithsonianArtworkList.js";
-
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import { MapContainer, TileLayer, ImageOverlay, Marker, Popup } from "react-leaflet";
+import { MapContainer, ImageOverlay } from "react-leaflet";
 import { Button } from "@material-ui/core";
-import { borders } from "@material-ui/system";
-
 import ArtworkMarkerList from "../../components/SmithsonianArtworkMarkerList.js";
 import RoomLabelList from "../../components/RoomLabelList.js";
-
 import '../Pages.css';
 
-var center = [-34.43537, 150.45502];
+var center = [-34.43537, 150.45502]; //Center lattidue and longitude of the map component
 
 function Smithsonian() {
 
+  {/*Function that scrolls to certan element on page that also includes offset (AppBar)*/}
   const scrollToTarget = (id) => {
     const element = document.getElementById(id);
     const offset = 100;
@@ -43,7 +25,7 @@ function Smithsonian() {
         behavior: "smooth"
     });
   }
-
+  {/*Event handler that runs scrollToTarget function*/}
   const handleButton1 = () => {
     scrollToTarget("here");
   }
@@ -53,6 +35,7 @@ function Smithsonian() {
       <div>
             <br/><br/><br/><br/><br/>
             <center>
+              {/*Button used to scroll down to Featured Artwork Cards*/}
               <Button
                   style={{marginTop: '10vh'}}
                   onClick={handleButton1}
@@ -60,6 +43,8 @@ function Smithsonian() {
                   color="primary">
                   Browse Featured Artwork
               </Button>
+
+              {/*Louvre Title overlaying the map component*/}
               <h1 className="museum-page-header" style={{
                 margin: "20px 0px 0px 0px", width: "70vw", fontSize: "40px", backgroundColor: "black", border: "solid", borderColor: "black", color: "white", fontFamily: `"Palatino Linotype", "Book Antiqua", "Palatino", serif`
               }}>THE SMITHSONIAN</h1>
@@ -70,7 +55,7 @@ function Smithsonian() {
                 display: "flex", justifyContent: "center", alignItems: "center"
               }}
             >
-
+              {/*Map Component*/}
               <Box
                 border={2}
                 style = {{
@@ -101,9 +86,13 @@ function Smithsonian() {
         </div>
 
         <br/><br/>
+
+        {/*Featured Artwork Title*/}
         <center>
           <h1 id="here" style={{marginTop: '0vh'}}>Featured Artwork</h1>
         </center>
+
+        {/*Artowork Cards Component*/}
         <Grid container spacing={0} direction="column">
 
             <SmithsonianArtworkList></SmithsonianArtworkList>

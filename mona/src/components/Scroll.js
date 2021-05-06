@@ -23,15 +23,16 @@ const useStyles = makeStyles((theme) => ({
     }
 })
 )
-
+ 
 const Scroll = ({
     showBelow,
 }) => {
 
     const classes = useStyles();
 
-    const [show, setShow] = useState(showBelow ? false : true)
+    const [show, setShow] = useState(showBelow ? false : true) // React hook that handles state of Scroll icon visibility 
 
+    {/*Event handler that runs setShow if the ofset is greater than the showBelow value*/}
     const handleScroll = () => {
         if (window.pageYOffset > showBelow) {
             if (!show) setShow(true)
@@ -40,6 +41,7 @@ const Scroll = ({
         }
     }
 
+    {/*Event handler that handles scrolling behavior*/}
     const handleClick = () => {
         window[`scrollTo`]({ top: 0, behavior: `smooth` })
     }
@@ -53,6 +55,7 @@ const Scroll = ({
 
     return (
         <div>
+            {/*Render icon button*/}
             {show &&
                 <IconButton onClick={handleClick} className={classes.toTop} aria-label="to top" component="span">
                     <ExpandLessIcon />

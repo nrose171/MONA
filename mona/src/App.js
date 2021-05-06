@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Explore from "./Pages/Explore";
 import Home from "./Pages/Home";
-import Map from "./Pages/Map";
 import SignIn from "./Pages/SignIn";
 import { Link } from 'react-router-dom';
 import {BrowserRouter as Router, Switch, Route, BrowserRouter} from 'react-router-dom';

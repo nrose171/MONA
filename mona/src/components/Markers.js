@@ -2,18 +2,16 @@ import React, {useState, useRef, useEffect} from "react";
 import { MapContainer, TileLayer, ImageOverlay, Marker, Popup } from "react-leaflet";
 import { GreenIcon, BlueIcon } from "./MarkerIcons.js";
 
-function changeColor(IconType, setIcon) {
-  setIcon(IconType);
-}
-
+//Class for ArtworkMarker that displays an icon on the virtual map//
 export default function ArtworkMarker(props) {
 
+    //Declare Hooks
     const [Icon, setIcon] = useState(GreenIcon);
     const [IsReset, setIsReset] = useState(false);
-
-    //Declare Hooks
     const markRef = useRef(null);
 
+    //Action listener for clicking on the map//
+    //Turns Icons green and changes the state of the markers//
     const handleClick = (e) => {
         if(e.target.src != undefined)
         {
@@ -32,12 +30,12 @@ export default function ArtworkMarker(props) {
         setIcon(GreenIcon);
     };
 
-    React.useEffect( () => {
-      // add when mounted
-      document.addEventListener("mousedown", handleClick);
-      // return function to be called when unmounted
-      return () => {
-        document.removeEventListener("mousedown", handleClick);
+      React.useEffect( () => {
+        // add when mounted
+        document.addEventListener("mousedown", handleClick);
+        // return function to be called when unmounted
+        return () => {
+          document.removeEventListener("mousedown", handleClick);
       };
     }, []);
 
@@ -52,24 +50,10 @@ export default function ArtworkMarker(props) {
               else
                 setIcon(BlueIcon);
             },
-            // popupOpen: (e) => {
-            //   setIcon(BlueIcon);
-            // },
-            // popupClose: (e) => {
-            //   setIcon(GreenIcon);
-            // },
           }}
         >
           <Popup
             position={props.location}
-            eventHandlers={{
-            // popupOpen: (e) => {
-            //   setIcon(BlueIcon);
-            // },
-            // popupClose: (e) => {
-            //   setIcon(GreenIcon);
-            // },
-            }}
           >
             <center>{props.name}</center>
             <center>

@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
+// Displays basic copyright information
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -26,6 +27,7 @@ function Copyright() {
   );
 }
 
+// Margins and Spacing
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -38,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#aba1f7",
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: '100%',
     marginTop: theme.spacing(1),
   },
   submit: {
@@ -46,6 +48,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// Largely Taken from Material-ui.com
 export default function SignIn() {
   const classes = useStyles();
 
@@ -57,6 +60,7 @@ export default function SignIn() {
         <Avatar className={classes.avatar} style={{marginTop: '10vh', marginLeft: '2vh'}}>
           <LockOutlinedIcon />
         </Avatar>
+        {/*Sign In Component*/}
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
@@ -83,10 +87,12 @@ export default function SignIn() {
             id="password"
             autoComplete="current-password"
           />
+          {/*Remember Me Component*/}
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
+          {/*Sign In Button*/}
           <Button
             type="submit"
             fullWidth
@@ -96,12 +102,14 @@ export default function SignIn() {
           >
             Sign In
           </Button>
+          {/*Forgot Password Component*/}
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
                 Forgot password?
               </Link>
             </Grid>
+            {/*'Don't have an account? Sign Up' Component*/}
             <Grid item>
               <Link href="#" variant="body2">
                 {"Don't have an account? Sign Up"}

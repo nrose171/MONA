@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import Container from '@material-ui/core/Container';
 import { Grid, Box, Typography, IconButton, Collapse, CardActions, CardContent, CardMedia, CardHeader, Card, makeStyles, Button, ButtonBase } from "@material-ui/core";
 import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from "@material-ui/core";
+
 const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
@@ -33,9 +34,10 @@ const useStyles = makeStyles((theme) => ({
 function Home() {
   const classes = useStyles();
 
-  const [openLouvre, setOpenLouvre] = React.useState(false);
-  const [openSmith, setOpenSmith] = React.useState(false);
+  const [openLouvre, setOpenLouvre] = React.useState(false); // React Hook to open the Louvre Card Alert
+  const [openSmith, setOpenSmith] = React.useState(false); // React Hook to open the Smithsonian Card Alert
 
+  // Handles the closing of Alerts
   const handleClose = () => {
     setOpenLouvre(false);
     setOpenSmith(false);
@@ -44,6 +46,8 @@ function Home() {
   return (
       <div style={{backgroundColor: "#e6ebff"}}>
         <div className={classes.heroContent}>
+
+          {/*Louve Card Component*/}
           <Container maxWidth="sm">
             <div style={{display: "flex"}}>
               <Typography style={{marginTop: '5vh'}} component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
@@ -60,6 +64,8 @@ function Home() {
             </Typography>
           </Container>
         </div>
+
+        {/*Smithsonian Card Component*/}
         <Container className={classes.cardGrid}>
           <Grid container spacing={4}>
             <Grid item xs={5}>
@@ -82,6 +88,8 @@ function Home() {
                     </CardContent>
                   </Card>
                 </ButtonBase>
+
+                {/*Dialouge/Alert Component*/}
                 <Dialog
                   open={openLouvre}
                   onClose={handleClose}

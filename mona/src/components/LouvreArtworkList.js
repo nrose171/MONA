@@ -1,22 +1,14 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
-import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { Grid, Box, withStyles} from "@material-ui/core";
+import { Grid, withStyles} from "@material-ui/core";
 
 import ArtworkCard from "./ArtworkCard";
 
+// Specialized Typography with the Roboto font
 const CustomTypography = withStyles({
   root: {
-    //color: "#FFFFFF",
+    //color: "#FFFFFF", can be used to change color
     fontFamily: 'Roboto'
   }
 })(Typography);
@@ -32,14 +24,20 @@ const LouvreArtworkList = props => {
       borderColor: "#003fff",
       //boxShadow: "5px 5px 10px #000000"
     },
+    // Used as margins for artwork images
+    // Standard portrait shape
     media1: {
       height: 150,
       width: 100,
     },
+    // Used as margins for artwork images
+    // Standard landscape shape
     media2: {
       height: 150,
       width: 187.5,
     },
+    // Used as margins for artwork images
+    // Larger landscape shape
     media3: {
       height: 150,
       width: 200,
@@ -59,6 +57,8 @@ const LouvreArtworkList = props => {
   const classes = useStyles();
 
   return (
+    // Collection of Artwork Items at the Louvre. 
+    // Each element is its own card with specialized information
     <Grid item xs={12} container spacing={3}>
 
       {/*Element 1*/}
@@ -162,7 +162,7 @@ const LouvreArtworkList = props => {
               move right away to Sweden. One of Descartes’ Dutch friends is the Catholic priest
               Augustijn Bloemaert. He is afraid that he may never see his friend again and invites
               Descartes to Haarlem where he lives.
-  ​                      Being familiar with Frans Hals, Bloemaert commissions Hals to paint a portrait of
+  ​            Being familiar with Frans Hals, Bloemaert commissions Hals to paint a portrait of
               Descartes. However, Descartes does not have much time to sit, and Hals needs to
               paint the portrait quicker than he usually does. He decides to use a small wooden
               panel of 5.5 x 7.5 inch (14 x 19 cm). It is the smallest painting he created during

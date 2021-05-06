@@ -12,22 +12,28 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Grid, Box } from "@material-ui/core";
 
+//ArworkCard class for creating ArtworkCard objects and stylizing them//
 const ArtworkCard = props => {
 
+  //Declare Hooks
   const [expanded, setExpanded] = React.useState(false);
   const [BoxShadow, setBoxShadow] = React.useState("0px 0px 0px #000000");
 
+  //Action listener for clicking a card
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
+  //Action Listener for mouse entering the inside a card
   const handleOnMouseEnter = () => {
     setBoxShadow("10px 10px 10px #000000");
   };
 
+  //Action Listener for mouse leaving the inside of a card
   const handleOnMouseLeave = () => {
     setBoxShadow("0px 0px 0px #000000");
   };
+
   return (
     <Grid item xs={4}>
         <Card

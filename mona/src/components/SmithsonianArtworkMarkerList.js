@@ -8,6 +8,8 @@ const ArtworkMarkerList = props => {
   var center = props.center;
 
   return (
+    // List of markers with paintings' images, names, and appropriate coordiantes
+    // Used by the Leaflet Map
     <div>
       <ArtworkMarker
         location={[center[0]-0.02, center[1]-0.06]}

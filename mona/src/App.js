@@ -8,10 +8,13 @@ import {BrowserRouter as Router, Switch, Route, BrowserRouter} from 'react-route
 import { AppBar, Tabs, Tab, Grid, Typography, Box, makeStyles } from "@material-ui/core";
 
 function App() {
-  const routes = ["/", "/Explore", "/SignIn"];
   const classes = useStyles();
-  const [value, setValue] = useState("/");
 
+  const routes = ["/", "/Explore", "/SignIn"]; //Different Pages to route to 
+
+  const [value, setValue] = useState("/"); //React hook that handles what page to render
+
+  // Event handler that sets value of selected menu tab 
   const handleChange = (e, newVal)=>{
     setValue(newVal)
   }
@@ -22,21 +25,29 @@ function App() {
       <BrowserRouter>
         <Route
           path="/"
-          render={(history) => (
+          render={() => (
             <AppBar style={{ background: '#a3baff' }}>
               <Grid container spacing={1} direction="column">
+                {/*Start of Grid container inside AppBar size of 12*/}
                 <Grid item xs={12} container>
+                  {/*Logo*/}
                   <Grid item xs={1}>
                     <Box m={1} pl={2}>
                       <img src="https://i.imgur.com/OKjUUmT.png" width="70" height="70"/>
                     </Box>
                   </Grid>
+
+                  {/*MONA Title*/}
                   <Grid item xs={1}>
                     <Box pl={2} pt={1}>
                       <Typography className={classes.h3} variant="h1">MONA</Typography>
                     </Box>
                   </Grid>
+
+                  {/*Empty Space to push Tabs on right side of AppBar*/}
                   <Grid item xs={6} />
+
+                  {/*Tabs Component*/}
                   <Grid item xs={4}>
                     <Box pt={2}>
                       <Tabs
@@ -71,9 +82,7 @@ function App() {
             </AppBar>
          )}
         />
-
-
-
+      {/*Tells React Router to switch to different pages*/}
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/Explore" component={Explore} />

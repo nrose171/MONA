@@ -1,6 +1,6 @@
 # MONA
 
-![Mona Preview](https://ibb.co/B2TLhKJ)
+![Mona Preview](C:\Users\nrose\Pictures\Mona Preview.png)
 
 ## Required Packages
 - yarn ~ (`npm install --global yarn`)
